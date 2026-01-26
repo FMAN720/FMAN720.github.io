@@ -1,0 +1,12 @@
+/* 调整搜索图标的大小和位置 */
+#search-button {
+  font-size: 1.4rem !important; /* 调整图标大小，数字越大图标越大 (默认通常是 1rem) */
+  padding-top: 5px !important;  /* 调整图标顶部的间距，数字越大图标越往下移 */
+}
+
+/* 鼠标悬停时的效果（可选，增加交互感） */
+#search-button:hover {
+  color: #ff7242 !important;    /* 悬停时变成橙色，你可以换成你喜欢的颜色 */
+  transform: scale(1.1);         /* 悬停时稍微放大一点点 */
+  transition: all 0.3s;
+}
