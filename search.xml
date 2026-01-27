@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>链表</title>
+    <url>/2026/01/27/%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="就是简单约瑟夫环"><a href="#就是简单约瑟夫环" class="headerlink" title="就是简单约瑟夫环"></a>就是简单约瑟夫环</h2><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//约瑟夫环问题的list解决方法</span></span><br><span class="line"><span class="comment">//直接用STL自己带的list</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,m;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    list&lt;<span class="type">int</span>&gt;node;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)node.<span class="built_in">push_back</span>(i);</span><br><span class="line">    list&lt;<span class="type">int</span>&gt;::iterator it=node.<span class="built_in">begin</span>();</span><br><span class="line">    <span class="keyword">while</span>(node.<span class="built_in">size</span>()&gt;<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;m;i++)&#123;</span><br><span class="line">            it++;</span><br><span class="line">            <span class="keyword">if</span>(it==node.<span class="built_in">end</span>())it=node.<span class="built_in">begin</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;*it&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        list&lt;<span class="type">int</span>&gt;::iterator next=++it;</span><br><span class="line">        <span class="keyword">if</span>(next==node.<span class="built_in">end</span>())next=node.<span class="built_in">begin</span>();</span><br><span class="line">        node.<span class="built_in">erase</span>(--it);<span class="comment">//去掉已经标记的一个，list.size()会自动减去1</span></span><br><span class="line">        it=next;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;*it&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h2><blockquote>
+<p>第一篇博客捏</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>算法竞赛上册 第一章基础数据结构 链表</category>
+      </categories>
+      <tags>
+        <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2026/01/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -19,21 +34,6 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>动态规划</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>链表</title>
-    <url>/2026/01/27/%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="就是简单约瑟夫环"><a href="#就是简单约瑟夫环" class="headerlink" title="就是简单约瑟夫环"></a>就是简单约瑟夫环</h2><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//约瑟夫环问题的list解决方法</span></span><br><span class="line"><span class="comment">//直接用STL自己带的list</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,m;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    list&lt;<span class="type">int</span>&gt;node;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)node.<span class="built_in">push_back</span>(i);</span><br><span class="line">    list&lt;<span class="type">int</span>&gt;::iterator it=node.<span class="built_in">begin</span>();</span><br><span class="line">    <span class="keyword">while</span>(node.<span class="built_in">size</span>()&gt;<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;m;i++)&#123;</span><br><span class="line">            it++;</span><br><span class="line">            <span class="keyword">if</span>(it==node.<span class="built_in">end</span>())it=node.<span class="built_in">begin</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;*it&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        list&lt;<span class="type">int</span>&gt;::iterator next=++it;</span><br><span class="line">        <span class="keyword">if</span>(next==node.<span class="built_in">end</span>())next=node.<span class="built_in">begin</span>();</span><br><span class="line">        node.<span class="built_in">erase</span>(--it);<span class="comment">//去掉已经标记的一个，list.size()会自动减去1</span></span><br><span class="line">        it=next;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;*it&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h2><blockquote>
-<p>第一篇博客捏</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>算法竞赛上册 第一章基础数据结构 链表</category>
-      </categories>
-      <tags>
-        <tag>链表</tag>
       </tags>
   </entry>
 </search>
