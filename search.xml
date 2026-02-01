@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>铁拳男人影评</title>
-    <url>/2026/01/30/%E4%B8%A4%E6%9D%86%E5%A4%A7%E7%83%9F%E6%9E%AA%E5%BD%B1%E8%AF%84/</url>
-    <content><![CDATA[<blockquote>
-<p>反转反转再反转，真是我看过最爽的黑色幽默电影</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>movies</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2026/01/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -58,17 +47,23 @@
       </categories>
   </entry>
   <entry>
-    <title>被解救的姜戈影评</title>
-    <url>/2026/01/31/%E8%A2%AB%E8%A7%A3%E6%95%91%E7%9A%84%E5%A7%9C%E6%88%88%E5%BD%B1%E8%AF%84/</url>
-    <content><![CDATA[]]></content>
+    <title>铁拳男人影评</title>
+    <url>/2026/01/30/%E4%B8%A4%E6%9D%86%E5%A4%A7%E7%83%9F%E6%9E%AA%E5%BD%B1%E8%AF%84/</url>
+    <content><![CDATA[<blockquote>
+<p>反转反转再反转，真是我看过最爽的黑色幽默电影</p>
+</blockquote>
+]]></content>
       <categories>
         <category>movies</category>
       </categories>
   </entry>
   <entry>
-    <title>铁拳男人影评</title>
-    <url>/2026/01/30/%E9%93%81%E6%8B%B3%E7%94%B7%E4%BA%BA%E5%BD%B1%E8%AF%84/</url>
-    <content><![CDATA[<p>一部非常好的拳击电影</p>
+    <title>杀手蝴蝶梦影评</title>
+    <url>/2026/02/01/%E6%9D%80%E6%89%8B%E8%9D%B4%E8%9D%B6%E6%A2%A6%E5%BD%B1%E8%AF%84/</url>
+    <content><![CDATA[<p><center>
+    <img src="/img/杀手蝴蝶梦.jpg" width="110%" alt="杀手蝴蝶梦">
+    <div style="color: #999; padding: 10px;">图 1：杀手蝴蝶梦</div>
+</center><br>完完全全是因为梁朝伟的一张剧照去看的这个电影，很不厚道的说，整部电影亮点就是王祖贤的颜值和梁朝伟的颜值了</p>
 ]]></content>
       <categories>
         <category>movies</category>
@@ -79,6 +74,14 @@
     <url>/2026/01/31/%E8%8A%B1%E6%A0%B7%E5%B9%B4%E5%8D%8E%E5%BD%B1%E8%AF%84/</url>
     <content><![CDATA[<p>好美的画面，然我重新认识到了王家卫的力量</p>
 ]]></content>
+      <categories>
+        <category>movies</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>被解救的姜戈影评</title>
+    <url>/2026/01/31/%E8%A2%AB%E8%A7%A3%E6%95%91%E7%9A%84%E5%A7%9C%E6%88%88%E5%BD%B1%E8%AF%84/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>movies</category>
       </categories>
@@ -99,12 +102,9 @@
       </tags>
   </entry>
   <entry>
-    <title>杀手蝴蝶梦影评</title>
-    <url>/2026/02/01/%E6%9D%80%E6%89%8B%E8%9D%B4%E8%9D%B6%E6%A2%A6%E5%BD%B1%E8%AF%84/</url>
-    <content><![CDATA[<p><center>
-    <img src="/img/杀手蝴蝶梦.jpg" width="110%" alt="杀手蝴蝶梦">
-    <div style="color: #999; padding: 10px;">图 1：杀手蝴蝶梦</div>
-</center><br>完完全全是因为梁朝伟的一张剧照去看的这个电影，很不厚道的说，整部电影亮点就是王祖贤的颜值和梁朝伟的颜值了</p>
+    <title>铁拳男人影评</title>
+    <url>/2026/01/30/%E9%93%81%E6%8B%B3%E7%94%B7%E4%BA%BA%E5%BD%B1%E8%AF%84/</url>
+    <content><![CDATA[<p>一部非常好的拳击电影</p>
 ]]></content>
       <categories>
         <category>movies</category>
