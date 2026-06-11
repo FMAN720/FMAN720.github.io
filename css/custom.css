@@ -10,3 +10,398 @@
   transform: scale(1.1);         /* 悬停时稍微放大一点点 */
   transition: all 0.3s;
 }
+
+/* 让右下角工具栏常驻显示，日夜切换不用先滚动或展开齿轮 */
+#rightside {
+  opacity: 0.9 !important;
+  transform: translate(-58px, 0) !important;
+}
+
+#rightside #darkmode {
+  background: linear-gradient(135deg, #2f80ed, #ffb84d) !important;
+  box-shadow: 0 6px 16px rgba(31, 42, 55, 0.18);
+}
+
+#rightside-config,
+#rightside-config-hide {
+  display: none !important;
+}
+
+html[data-theme='dark'] #rightside #darkmode {
+  background: linear-gradient(135deg, #172033, #334155) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.38);
+}
+
+/* 白天模式：清爽、偏阅读感 */
+html[data-theme='light'] {
+  --global-bg: #f6f8fb;
+  --font-color: #2f363d;
+  --card-bg: rgba(255, 255, 255, 0.94);
+  --card-meta: #77808c;
+  --btn-bg: #2f80ed;
+  --btn-color: #fff;
+  --btn-hover-color: #ff7242;
+  --text-highlight-color: #1f2a37;
+  --blockquote-color: #536171;
+  --blockquote-bg: rgba(47, 128, 237, 0.09);
+  --toc-link-color: #657386;
+  --light-grey: #e6ebf2;
+  --dark-grey: #9aa6b2;
+  --scrollbar-color: #5b9bdc;
+  --card-box-shadow: 0 6px 18px rgba(31, 42, 55, 0.07);
+  --card-hover-box-shadow: 0 10px 28px rgba(31, 42, 55, 0.12);
+}
+
+html[data-theme='light'] body {
+  background: linear-gradient(180deg, #f8fbff 0%, #eef3f8 100%) fixed;
+}
+
+/* 深夜模式：降低眩光，适合夜里看题和写影评 */
+html[data-theme='dark'] {
+  --global-bg: #0b0f14;
+  --font-color: rgba(235, 241, 247, 0.82);
+  --card-bg: rgba(17, 24, 32, 0.96);
+  --card-meta: rgba(205, 214, 224, 0.56);
+  --btn-bg: #1f6feb;
+  --btn-color: rgba(255, 255, 255, 0.9);
+  --btn-hover-color: #f08a5d;
+  --text-highlight-color: rgba(255, 255, 255, 0.94);
+  --blockquote-color: rgba(226, 232, 240, 0.78);
+  --blockquote-bg: rgba(96, 165, 250, 0.12);
+  --toc-link-color: rgba(226, 232, 240, 0.62);
+  --light-grey: rgba(226, 232, 240, 0.68);
+  --dark-grey: rgba(226, 232, 240, 0.22);
+  --hr-border: rgba(148, 163, 184, 0.22);
+  --hr-before-color: rgba(226, 232, 240, 0.5);
+  --search-bg: #111820;
+  --search-input-color: rgba(235, 241, 247, 0.82);
+  --search-a-color: rgba(235, 241, 247, 0.82);
+  --scrollbar-color: #334155;
+  --card-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+  --card-hover-box-shadow: 0 12px 32px rgba(0, 0, 0, 0.42);
+}
+
+html[data-theme='dark'] body {
+  background: linear-gradient(180deg, #0b0f14 0%, #101820 100%) fixed;
+}
+
+html[data-theme='dark'] #page-header::before {
+  background-color: rgba(0, 0, 0, 0.46);
+}
+
+html[data-theme='dark'] img {
+  filter: brightness(0.86);
+}
+
+/* 首页：把默认文章流改成训练日志的感觉 */
+#page-header.full_page {
+  min-height: 86vh !important;
+  background-position: center center !important;
+}
+
+#page-header.full_page::before {
+  background: linear-gradient(90deg, rgba(5, 10, 18, 0.72), rgba(5, 10, 18, 0.24) 46%, rgba(5, 10, 18, 0.36)) !important;
+}
+
+#site-info {
+  text-align: left !important;
+  width: min(980px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+#site-info::before {
+  content: "TIME TRAINING LOG";
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+#site-info::after {
+  content: "算法训练 / 电影札记 / 白天学习 / 深夜复盘";
+  display: block;
+  max-width: 560px;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+#site-title {
+  max-width: 760px;
+  text-align: left !important;
+  line-height: 1.12;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.42);
+}
+
+#nav {
+  backdrop-filter: blur(16px);
+}
+
+#recent-posts {
+  position: relative;
+}
+
+#recent-posts::before {
+  content: "训练记录";
+  display: block;
+  margin: 0 0 18px;
+  color: var(--text-highlight-color);
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+
+#recent-posts .recent-post-item {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(120, 130, 150, 0.16);
+  border-radius: 8px !important;
+  background: var(--card-bg);
+  box-shadow: var(--card-box-shadow);
+}
+
+#recent-posts .recent-post-item::before {
+  content: "LOG";
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 1;
+  color: var(--card-meta);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+#recent-posts .article-title {
+  padding-right: 54px;
+}
+
+#recent-posts .article-title::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2f80ed, #ff7242);
+}
+
+.card-announcement .announcement_content {
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+/* 关于页：选手资料卡 */
+.type-about #page-header.not-home-page {
+  height: 34vh !important;
+  min-height: 240px;
+  max-height: 320px;
+  background-size: auto 86% !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-color: #16140e !important;
+}
+
+.type-about #page-header.not-home-page::before {
+  background: linear-gradient(90deg, rgba(5, 10, 18, 0.7), rgba(5, 10, 18, 0.08) 50%, rgba(5, 10, 18, 0.34)) !important;
+}
+
+.type-about #page-site-info {
+  text-align: left;
+  width: min(980px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.type-about #page-site-info::before {
+  content: "PLAYER CARD";
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.78rem;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.24);
+}
+
+.fighter-profile {
+  display: grid;
+  grid-template-columns: minmax(220px, 36%) 1fr;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.fighter-photo img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
+}
+
+.profile-kicker,
+.movie-room-kicker {
+  margin: 0 0 10px;
+  color: #2f80ed;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.fighter-info h2 {
+  margin: 0 0 14px;
+  font-size: 1.85rem;
+  line-height: 1.25;
+}
+
+.fighter-info p {
+  line-height: 1.9;
+}
+
+.fighter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.fighter-tags span,
+.movie-stats span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: rgba(47, 128, 237, 0.1);
+  color: var(--text-highlight-color);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.profile-grid > div {
+  padding: 18px;
+  border: 1px solid rgba(120, 130, 150, 0.18);
+  border-radius: 8px;
+  background: var(--card-bg);
+}
+
+.profile-grid strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-highlight-color);
+}
+
+.profile-grid p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.profile-quote {
+  margin-top: 30px !important;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+/* 电影页：影音室 */
+.movie-room {
+  position: relative;
+  margin: 8px 0 26px;
+  padding: 26px;
+  border: 1px solid rgba(120, 130, 150, 0.18);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(47, 128, 237, 0.1), rgba(255, 114, 66, 0.08)), var(--card-bg);
+  overflow: hidden;
+}
+
+.movie-room h2 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+}
+
+.movie-room p {
+  max-width: 760px;
+  line-height: 1.85;
+}
+
+.movie-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.movie-container {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)) !important;
+  gap: 16px !important;
+}
+
+.movie-card {
+  width: auto !important;
+  border: 1px solid rgba(120, 130, 150, 0.16) !important;
+  border-radius: 8px !important;
+  background: var(--card-bg) !important;
+  box-shadow: var(--card-box-shadow) !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-hover-box-shadow) !important;
+}
+
+.movie-card img {
+  height: 230px !important;
+}
+
+.movie-card h3 {
+  color: var(--text-highlight-color) !important;
+  line-height: 1.35;
+}
+
+.movie-card p {
+  color: var(--font-color) !important;
+}
+
+.movie-card a {
+  font-weight: 700;
+}
+
+html[data-theme='dark'] .movie-room,
+html[data-theme='dark'] .profile-grid > div {
+  border-color: rgba(226, 232, 240, 0.12);
+}
+
+@media (max-width: 768px) {
+  #site-info {
+    width: min(100% - 32px, 680px);
+  }
+
+  #site-title {
+    font-size: 2.05rem !important;
+  }
+
+  #site-info::after {
+    font-size: 0.92rem;
+  }
+
+  .fighter-profile,
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-room {
+    padding: 20px;
+  }
+}
