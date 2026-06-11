@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Task Tracker Cli项目学习日志 | 时间是世界上最珍贵的东西</title><meta name="author" content="Time"><meta name="copyright" content="Time"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="原文链接：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;Time25&#x2F;p&#x2F;19828921.html 2026.4.7开始Task_Tracker_Cli的工作：开始的目的主要是为了实现一个可以自动管理任务的小工具，可以应用到自己的生活中 学习点1：输入文件流对象，在函数loadTasks()中学习原因是因为在代码中发现1std::ifstream file(FILE_NAME);代码在项目中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Task Tracker Cli项目学习日志">
+<meta property="og:url" content="https://fman720.github.io/2026/04/07/Task%20Tracker%20Cli%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/index.html">
+<meta property="og:site_name" content="时间是世界上最珍贵的东西">
+<meta property="og:description" content="原文链接：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;Time25&#x2F;p&#x2F;19828921.html 2026.4.7开始Task_Tracker_Cli的工作：开始的目的主要是为了实现一个可以自动管理任务的小工具，可以应用到自己的生活中 学习点1：输入文件流对象，在函数loadTasks()中学习原因是因为在代码中发现1std::ifstream file(FILE_NAME);代码在项目中">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fman720.github.io/img/catcoding.webp">
+<meta property="article:published_time" content="2026-04-07T03:03:00.000Z">
+<meta property="article:modified_time" content="2026-04-07T03:03:00.000Z">
+<meta property="article:author" content="Time">
+<meta property="article:tag" content="cnblogs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fman720.github.io/img/catcoding.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Task Tracker Cli项目学习日志",
+  "url": "https://fman720.github.io/2026/04/07/Task%20Tracker%20Cli%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/",
+  "image": "https://fman720.github.io/img/catcoding.webp",
+  "datePublished": "2026-04-07T03:03:00.000Z",
+  "dateModified": "2026-04-07T03:03:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Time",
+      "url": "https://FMAN720.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fman720.github.io/2026/04/07/Task%20Tracker%20Cli%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 7 || hour >= 22
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Task Tracker Cli项目学习日志',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css?v=20260611b"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/catcoding.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-dumbbell"></i><span> 训练场</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-id-card"></i><span> 选手卡</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影音室</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">时间是世界上最珍贵的东西</span></a><a class="nav-page-title" href="/"><span class="site-name">Task Tracker Cli项目学习日志</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-dumbbell"></i><span> 训练场</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-id-card"></i><span> 选手卡</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影音室</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Task Tracker Cli项目学习日志</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-07T03:03:00.000Z" title="发表于 2026-04-07 11:03:00">2026-04-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-07T03:03:00.000Z" title="更新于 2026-04-07 11:03:00">2026-04-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Time25/p/19828921.html">https://www.cnblogs.com/Time25/p/19828921.html</a></p>
+<h2 id="2026-4-7"><a href="#2026-4-7" class="headerlink" title="2026.4.7"></a>2026.4.7</h2><p>开始Task_Tracker_Cli的工作：开始的目的主要是为了实现一个可以自动管理任务的小工具，可以应用到自己的生活中</p>
+<h3 id="学习点1：输入文件流对象，在函数loadTasks-中"><a href="#学习点1：输入文件流对象，在函数loadTasks-中" class="headerlink" title="学习点1：输入文件流对象，在函数loadTasks()中"></a>学习点1：输入文件流对象，在函数loadTasks()中</h3><p>学习原因是因为在代码中发现<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::ifstream file(FILE_NAME);</span><br></pre></td></tr></table></figure><br><strong>代码在项目中的详细意思是：</strong><br>std::ifstream 是 C++ 标准库中的类，用于创建输入文件流对象，从文件读取数据。<br>file(FILE_NAME) 创建一个名为 file 的 std::ifstream 对象，并尝试以只读模式打开名为 FILE_NAME（常量字符串 “tasks.json”）的文件。<br>如果文件存在且可访问，file 对象可用于后续读取操作；如果失败，file.is_open() 将返回 false（下一行代码会检查并处理）。<br>在 loadTasks 函数上下文中，这行代码用于打开任务数据文件，为后续从 JSON 文件加载任务列表做准备。</p>
+</blockquote>
+<p><strong>形象比喻</strong></p>
+<ol>
+<li>核心比喻：数据水管<br>想象一下：<br>你的硬盘上的 tasks.json 文件：是一个装满水的水库（水就是文件里的文本数据）。<br>你的 C++ 运行程序（内存）：是一个空水桶，现在急需把文件里的数据装进来处理。<br>水库里的水不可能瞬间“瞬移”到水桶里。你需要买一根水管，一头插进水库，一头放在水桶里，让水一点点<strong>流（Stream）</strong>过来。<br>在 C++ 里：<br>流（Stream）：指的就是数据像流水一样，一滴一滴（一个字节一个字节）地传输。<br>输入（Input）：站在程序的视角，数据从外面（硬盘）进到程序里，叫输入。<br>对象（Object）：就是你在代码里造出来的这根“水管”的实体。<br>所以，输入文件流对象，就是C++专门用来从硬盘文件里“往程序里抽水（读数据）”的那根管子。它的英文真名叫做 ifstream (Input File Stream)。<br>个人理解：<br>创建了一个名字叫做：file的对象，可以把这个对象理解为一个水管，这个水管是插入到FILE_NAME这个里面的（也就是tasks.json），<h3 id="学习点2：既然有输入文件流，就有输出文件流"><a href="#学习点2：既然有输入文件流，就有输出文件流" class="headerlink" title="学习点2：既然有输入文件流，就有输出文件流"></a>学习点2：既然有输入文件流，就有输出文件流</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::ofstream file(FILE_NAME);</span><br></pre></td></tr></table></figure>
+同理，这个就是在task.json文件中加数据（往硬盘里的文件里喷数据。），类似的东西就是cout&lt;&lt;”hello world”;，这不过这个是在屏幕上喷东西，<br><strong>学习代码</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">void saveTasks(const std::vector&lt;Task&gt;&amp; tasks) &#123;</span><br><span class="line">    // 1. 【架起喷枪】</span><br><span class="line">    // 创建对象，管子一头插进硬盘的 tasks.json </span><br><span class="line">    std::ofstream file(FILE_NAME); </span><br><span class="line"></span><br><span class="line">    // 2. 【清空底色】</span><br><span class="line">    // 默认情况下，ofstream 一打开文件，就会把文件里原来的内容全部擦干净！</span><br><span class="line">    // 就像你要重新刷墙，它先帮你把旧墙纸撕了。</span><br><span class="line"></span><br><span class="line">    // 3. 【开始喷涂】</span><br><span class="line">    file &lt;&lt; &quot;[\n&quot;; // 往文件里喷一个方括号，代表 JSON 数组开始</span><br><span class="line"></span><br><span class="line">    for (size_t i = 0; i &lt; tasks.size(); ++i) &#123;</span><br><span class="line">        // 接下来这一大段，就是按照特定的格式一点点往文件里“喷”文字</span><br><span class="line">        file &lt;&lt; &quot;  &#123;\n&quot;;</span><br><span class="line">        file &lt;&lt; &quot;    \&quot;id\&quot;: &quot; &lt;&lt; tasks[i].id &lt;&lt; &quot;,\n&quot;;</span><br><span class="line">        file &lt;&lt; &quot;    \&quot;description\&quot;: \&quot;&quot; &lt;&lt; tasks[i].description &lt;&lt; &quot;\&quot;,\n&quot;;</span><br><span class="line">        file &lt;&lt; &quot;    \&quot;status\&quot;: \&quot;&quot; &lt;&lt; tasks[i].status &lt;&lt; &quot;\&quot;\n&quot;;</span><br><span class="line">        file &lt;&lt; &quot;  &#125;&quot;;</span><br><span class="line">        </span><br><span class="line">        // 如果不是最后一个任务，喷个逗号隔开</span><br><span class="line">        if (i &lt; tasks.size() - 1) file &lt;&lt; &quot;,&quot;;</span><br><span class="line">        file &lt;&lt; &quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    file &lt;&lt; &quot;]\n&quot;; // 喷完收工，闭合方括号</span><br><span class="line">    </span><br><span class="line">    // 4. 【放下喷枪】</span><br><span class="line">    // 函数结束，file 对象销毁，自动关闭文件，确保水滴不漏，所有数据安全写入硬盘。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<strong>一些小细节</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">A. 为什么不用手动关文件？</span><br><span class="line">你可能会看到有些老代码写 file.close();。但在现代 C++ 里，只要 file 这个变量的作用域（那对大括号 &#123;&#125;）结束了，它会自动执行析构函数，帮你把文件关得严严实实。这叫“负责任的资源管理”。</span><br><span class="line">B. 万一我想“接着喷”而不是“覆盖喷”怎么办？</span><br><span class="line">默认情况下，ofstream 是覆盖模式。如果你想在文件末尾接着写，不删掉以前的内容，你需要加一个参数（追加模式）：</span><br><span class="line">code</span><br><span class="line">C++</span><br><span class="line">std::ofstream file(FILE_NAME, std::ios::app); // app 就是 append（追加）</span><br><span class="line">但是在我们的任务管理器里，我们是把整个列表改好了再一次性覆盖写入，所以不用加这个参数。</span><br><span class="line">C. 它是先喷到“缓冲区”的</span><br><span class="line">这把喷枪其实不是直接喷到硬盘上的（因为硬盘很慢）。它是先喷到内存里的一个“缓存桶”里。等桶满了，或者程序结束了，系统才会哗啦一下全部倒进硬盘。这样效率更高。</span><br><span class="line">就类似于：你要吃一个糖果就去买一颗，等会要吃了就又去买一颗，这有太浪费时间了，更高效的做法是一次性就买100颗</span><br></pre></td></tr></table></figure>
+<strong>既然输出流有一个缓冲区，那么输入流就肯定也有，接下来是具体操作流程</strong></li>
+<li>输入流的工作流程（以你的 loadTasks 为例）<br>当你执行 buffer &lt;&lt; file.rdbuf(); 或者读取文件内容时，幕后发生了这些事：<br>预读（Read-ahead）：<br>当你让 file 去读 1 个字节时，操作系统其实并不只读这 1 个字节。它会“自作聪明”地从硬盘里直接搬一大块数据（比如 4KB 或 8KB）出来，塞进内存里的输入缓冲区。<br>内存取货：<br>接下来的读取操作（比如你想找下一个引号、下一个逗号），程序其实根本没去碰硬盘，而是直接在内存里的缓冲区里“翻找”。这速度快得飞起！<br>自动补货：<br>当缓冲区里的数据被你读光了，而文件还没读完，系统会自动再去硬盘里搬下一块数据进来填满“储水罐”。<br><strong>进阶</strong><br>如果你想强制“清空”缓冲区？<br>对于输出流：有时候你写了数据，但还没攒够一桶，它没写进硬盘。如果你急着要看，可以用 file &lt;&lt; std::endl; 或者 file.flush();。这就像是强行踩一下马桶冲水键，不管桶里有多少，全部冲进硬盘。<br>对于输入流：通常不需要手动干预，它会自动预读。<h3 id="学习点3：把文件内容读入到字符串流中"><a href="#学习点3：把文件内容读入到字符串流中" class="headerlink" title="学习点3：把文件内容读入到字符串流中"></a>学习点3：把文件内容读入到字符串流中</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::stringstream buffer;</span><br></pre></td></tr></table></figure>
+这个类似于一个巨大容器，把你从硬盘里读到的东西都加入到这个里面，后续你要借助这个把你读取的东西变成一个长的字符串，就是借助下面这个：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">buffer.str();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://FMAN720.github.io">Time</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://fman720.github.io/2026/04/07/Task%20Tracker%20Cli%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">https://fman720.github.io/2026/04/07/Task%20Tracker%20Cli%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://FMAN720.github.io" target="_blank">时间是世界上最珍贵的东西</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/cnblogs/">cnblogs</a></div><div class="post-share"><div class="social-share" data-image="/img/catcoding.webp" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/04/08/%E5%85%B3%E4%BA%8ETsak%20Traker/" title="关于Tsak Traker"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">关于Tsak Traker</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19832473.html 关于这个小项目原来的目的就是给自己写一个便于管理任务的小工具，原本的打算是在黑框框的终端里运行的，后面发现自己好像安好了Qt的环境，并且之前玩过一段时间的Qtcrearter，于是有想法给这个项目加一个ui界面开始的ui界面是这样的  由于找不到最开始的完整的界面了所以放了一个类似的一个功能的界面，方正就是不太好看，我的想法是既然都到这一步了，那不妨做好点经过了一番努力之后，结果是这样的 总结还是挺有成就感的，懂得了一个道理，之前在余华老师得书里好像也看到过类似的：所以伟大的事情，都有一个微不足道的起点，虽然我这个项目并不伟大，但是对于现在的我来说，确实挺不容易的了 最后会继续优化下项目，找个机会开源到GitHub上去，嘻嘻 </div></div></div></a><a class="pagination-related" href="/2026/04/06/P1347%20%5BECNA%202001%5D%20%E6%8E%92%E5%BA%8F/" title="P1347 [ECNA 2001] 排序"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">P1347 [ECNA 2001] 排序</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19824393.html code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105#include&lt;bits/stdc++.h&gt;using namespace std;//&quot;O campeão tem nome, e se chama Charles Oliveira!&quot;#define int long long#define endl &#x27;\n&#x27;#define ep emplace#define pob #define ll long long#define pb push_back#def...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/03/11/%E6%81%B0%E5%A5%BD%E5%9E%8B%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" title="恰好型滑动窗口"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-11</div><div class="info-item-2">恰好型滑动窗口</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19704828.html 和相同的二元子数组题目大意，就是求这个数组中和为k的子数组的个数 解题思路1：哈希map法123456789101112131415class Solution &#123;public:    int numSubarraysWithSum(vector&lt;int&gt;&amp; nums, int goal) &#123;        int n=nums.size();        unordered_map&lt;int,int&gt;mp;        int sum=0,ans=0;        for(int i=0;i&lt;n;i++)&#123;            mp[sum]++;            sum+=nums[i];            ans+=mp[sum-goal];        &#125;        return ans;    &#125;&#125;;//假设j~i这段区间的和是要求的k，求前缀和，...</div></div></div></a><a class="pagination-related" href="/2026/03/13/AT_abc447_E%20%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%9A%84%E5%BA%94%E7%94%A8/" title="AT_abc447_E 并查集的应用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-13</div><div class="info-item-2">AT_abc447_E 并查集的应用</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19713069.html 题目大意，就是给你一个图，要求这个图的联通块要等于两个，你可以做的操作是把其中的某几条线给删除掉输入*5 72 31 21 54 52 43 51 3 输出**22 解题思路每条边的边权时2^i次方（1&lt;=i&lt;=m)策略是要尽可能的保住边权大的那条边，之所以从开始就是为了保住i更大的一方，因为2^7&gt;2^6+2^5+2^4…………，所以保住i更大的也就是边权更大的那一条边非常重要这个题目跟联通块相关联，所以非常适合用并查集（我自己这么觉得的） code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384#include&lt;bits/stdc++.h&gt;using namespace std...</div></div></div></a><a class="pagination-related" href="/2026/03/14/leet3775/" title="leet3775"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-14</div><div class="info-item-2">leet3775</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19716870.html 要学习的code1234567891011121314151617181920212223242526272829303132class Solution &#123;    static constexpr string VOWELS = &quot;aeiou&quot;;//这个constexpr就是强调，这个绝对不可以变    template&lt;ranges::input_range R&gt;    /*这个写法，我定义了一个模板，但为了防止你传入乱七八糟的类型    （比如传入一个 int 整数或者一个根本不能遍历的类），    我给参数 R 加了一个硬性条件。”    int count_vowel(const R&amp; s) &#123;        int vowel = 0;        for (char c : s) &#123;            if (VOWELS.find(c) != string::npos) &#123; ...</div></div></div></a><a class="pagination-related" href="/2026/05/04/%E6%B4%9B%E8%B0%B7%20p2537%20%E6%BB%91%E9%9B%AA%20%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%9A%84%E5%88%A9%E7%94%A8%20%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%9C%A8%E6%9C%89%E5%90%91%E5%9B%BE%E4%B8%AD%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8F%AF%E4%BB%A5,%E5%9C%A8%E8%BF%99%E9%A2%98%E4%B8%AD%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%88-%E5%8F%AF%E4%BB%A5-/" title="洛谷 p2537 滑雪 最小生成树的利用 最小生成树在有向图中为什么不可以，在这题中为什么又&quot;可以&quot;"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-04</div><div class="info-item-2">洛谷 p2537 滑雪 最小生成树的利用 最小生成树在有向图中为什么不可以，在这题中为什么又&quot;可以&quot;</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19971637.html 题目https://www.luogu.com.cn/problem/P2573由于变量名实在抽象，可能再过几天我自己都看不懂这个变量是什么意思了，所以我更改的更正规了一点12题目大意就是说：有好几座山，你站了一号，你只能滑倒比你低的山去看风景，然后你有药水，可以回到你前一个到的地方，或者前前一个，或者前.....前一个，简单说就是可以无限的喝这个药水题目读完就可以很明显的发现是最小生成树了，关于最小生成树，最直观的理解就是,给一个村庄里拉一条电线，要求电可以输送到每一户人家，然后要求这个线最短 代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include&lt;bits/stdc++.h&gt;using namespace std;#define int long longconst int ...</div></div></div></a><a class="pagination-related" href="/2026/03/31/java%E4%B8%AD%E7%9A%84%20...--%E8%AF%AD%E6%B3%95/" title="java中的 ...--语法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-31</div><div class="info-item-2">java中的 ...--语法</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19797861.html 函数例子1234567public static double totalTax(Income... incomes) &#123;        double total = 0;        for (Income income: incomes) &#123;            total = total + income.getTax();        &#125;        return total;    &#125; 解释这个…的意思是可以传入多个参数在 Java 中，这三个点 … 被称为 可变参数 (Varargs)，全称是 Variable Arguments。简单来说，它的作用是：允许你在调用方法时，传入任意数量（0个、1个或多个）的参数。  123456public void printScores(int... scores) &#123;     // scores 在方法内部其实被当作一个“数组”来处理    for (int s : ...</div></div></div></a><a class="pagination-related" href="/2026/04/06/P1347%20%5BECNA%202001%5D%20%E6%8E%92%E5%BA%8F/" title="P1347 [ECNA 2001] 排序"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-06</div><div class="info-item-2">P1347 [ECNA 2001] 排序</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19824393.html code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105#include&lt;bits/stdc++.h&gt;using namespace std;//&quot;O campeão tem nome, e se chama Charles Oliveira!&quot;#define int long long#define endl &#x27;\n&#x27;#define ep emplace#define pob #define ll long long#define pb push_back#def...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/catcoding.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Time</div><div class="author-info-description">算法训练 / 电影札记 / 夜间复盘</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/FMAN720"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/FMAN720" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/1131027701" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">精准大于力量时机胜过速度</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2026-4-7"><span class="toc-number">1.</span> <span class="toc-text">2026.4.7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%82%B91%EF%BC%9A%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6%E6%B5%81%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%9C%A8%E5%87%BD%E6%95%B0loadTasks-%E4%B8%AD"><span class="toc-number">1.1.</span> <span class="toc-text">学习点1：输入文件流对象，在函数loadTasks()中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%82%B92%EF%BC%9A%E6%97%A2%E7%84%B6%E6%9C%89%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6%E6%B5%81%EF%BC%8C%E5%B0%B1%E6%9C%89%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6%E6%B5%81"><span class="toc-number">1.2.</span> <span class="toc-text">学习点2：既然有输入文件流，就有输出文件流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%82%B93%EF%BC%9A%E6%8A%8A%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E8%AF%BB%E5%85%A5%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%B5%81%E4%B8%AD"><span class="toc-number">1.3.</span> <span class="toc-text">学习点3：把文件内容读入到字符串流中</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/31/leetcode%20O(n)%E6%89%BE%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%ACk%E4%B8%AA%E6%9C%80%E5%A4%A7%E7%9A%84%E5%85%83%E7%B4%A0,%E5%88%A9%E7%94%A8%E7%9A%84%E6%98%AF%E7%B1%BB%E4%BC%BC%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%86%99%E6%B3%95,%E6%B6%89%E5%8F%8A%E5%88%B0%20Hoare%20%E5%88%92%E5%88%86/" title="leetcode O(n)找数组中第k个最大的元素，利用的是类似快速排序的写法，涉及到 Hoare 划分">leetcode O(n)找数组中第k个最大的元素，利用的是类似快速排序的写法，涉及到 Hoare 划分</a><time datetime="2026-05-31T12:31:00.000Z" title="发表于 2026-05-31 20:31:00">2026-05-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/22/%E4%B8%80%E5%88%99CF%E9%A2%98%E8%A7%A3/" title="一则CF题解">一则CF题解</a><time datetime="2026-05-22T13:14:00.000Z" title="发表于 2026-05-22 21:14:00">2026-05-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/14/java%20web%E5%AD%A6%E4%B9%A0--%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" title="java web学习--前端基础">java web学习--前端基础</a><time datetime="2026-05-14T12:44:00.000Z" title="发表于 2026-05-14 20:44:00">2026-05-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/13/java%E5%AD%A6%E4%B9%A0--NullPointerException/" title="java学习--NullPointerException">java学习--NullPointerException</a><time datetime="2026-05-13T03:55:00.000Z" title="发表于 2026-05-13 11:55:00">2026-05-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/13/java%E5%AD%A6%E4%B9%A0--%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8/" title="java学习--自定义异常">java学习--自定义异常</a><time datetime="2026-05-13T03:16:00.000Z" title="发表于 2026-05-13 11:16:00">2026-05-13</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Time</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.3</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.3"></script><script src="/js/main.js?v=5.5.3"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.3"></script></div></div></body></html>

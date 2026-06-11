@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>时间是世界上最珍贵的东西 - 加油学习</title><meta name="author" content="Time"><meta name="copyright" content="Time"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录算法学习过程 对了我还是一个mma和拳击爱好者">
+<meta property="og:type" content="website">
+<meta property="og:title" content="时间是世界上最珍贵的东西">
+<meta property="og:url" content="https://fman720.github.io/page/6/index.html">
+<meta property="og:site_name" content="时间是世界上最珍贵的东西">
+<meta property="og:description" content="记录算法学习过程 对了我还是一个mma和拳击爱好者">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fman720.github.io/img/catcoding.webp">
+<meta property="article:author" content="Time">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fman720.github.io/img/catcoding.webp"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fman720.github.io/page/6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 7 || hour >= 22
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '时间是世界上最珍贵的东西',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/css/custom.css?v=20260611b"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/catcoding.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-dumbbell"></i><span> 训练场</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-id-card"></i><span> 选手卡</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影音室</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/home-training-log.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">时间是世界上最珍贵的东西</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-dumbbell"></i><span> 训练场</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-id-card"></i><span> 选手卡</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影音室</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">时间是世界上最珍贵的东西</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/FMAN720" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/1131027701" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/12/atcoder_abc_447D%E6%83%A8%E7%83%88%E5%AE%9E%E5%86%B5/" title="atcoder_abc_447D惨烈实况">atcoder_abc_447D惨烈实况</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-12T15:18:00.000Z" title="发表于 2026-03-12 23:18:00">2026-03-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="content"> 原文链接：https://www.cnblogs.com/Time25/p/19710699.html 被自己蠢哭了本人蒟蒻，也许是因为是D题所以想的有点多了，如果放在B题的话说不定就。。。。。code(没事找事版本，就是我自己调了半天的版本)12345678910111213141516171819202122232425262728293031323334void solve() &#123;    string s;cin&gt;&gt;s;    s=&quot; &quot;+s;    deque&lt;int&gt;back_char;    deque&lt;int&gt;cnt_b;    int ans=0;    for(int i=1;i&lt;=(int)s.length();i++)&#123;        if(s[i]!=&#x27;B&#x27;&amp;&amp;s[i]!=&#x27;C&#x27;)&#123;        back_char.pb(i);       //while(!cnt_b.empty()&amp;&amp;c...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/11/aeiou%E5%92%8C%E5%B0%8F%E5%B7%A7%E6%80%9D/" title="aeiou和小巧思">aeiou和小巧思</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-11T15:06:00.000Z" title="发表于 2026-03-11 23:06:00">2026-03-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="content"> 原文链接：https://www.cnblogs.com/Time25/p/19705006.html lc 3306. 元音辅音字符串计数 IIaeiou没必要一个一个敲一个班级有10个人至少20岁，有3个人至少21岁，那么恰好20岁得人是多少?就是10-7，这题可以用这个思路来写，（灵神nb）12345678910111213141516171819202122232425262728293031323334353637class Solution &#123;    const string VOWEL = &quot;aeiou&quot;;     //后面可以用VOWEL.find(x)!=string::npos    long long f(string&amp; word, int k) &#123;        long long ans = 0;        // 这里用哈希表实现，替换成数组会更快        unordered_map&lt;char, int&gt; cnt1; // 每种元音的个数        int cnt2 = 0; /...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/11/%E6%81%B0%E5%A5%BD%E5%9E%8B%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" title="恰好型滑动窗口">恰好型滑动窗口</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-11T14:04:00.000Z" title="发表于 2026-03-11 22:04:00">2026-03-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="content"> 原文链接：https://www.cnblogs.com/Time25/p/19704828.html 和相同的二元子数组题目大意，就是求这个数组中和为k的子数组的个数 解题思路1：哈希map法123456789101112131415class Solution &#123;public:    int numSubarraysWithSum(vector&lt;int&gt;&amp; nums, int goal) &#123;        int n=nums.size();        unordered_map&lt;int,int&gt;mp;        int sum=0,ans=0;        for(int i=0;i&lt;n;i++)&#123;            mp[sum]++;            sum+=nums[i];            ans+=mp[sum-goal];        &#125;        return ans;    &#125;&#125;;//假设j~i这段区间的和是要求的k，求前缀和，...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/11/++a%20a++%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9C%A8%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E4%B8%AD%E7%9A%84%E7%94%A8%E6%B3%95/" title="++a a++的一些在滑动窗口中的用法">++a a++的一些在滑动窗口中的用法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-11T09:05:00.000Z" title="发表于 2026-03-11 17:05:00">2026-03-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="content"> 原文链接：https://www.cnblogs.com/Time25/p/19703580.html lc 2537. 统计好子数组的数目code123456789101112131415161718class Solution &#123;public:    long long countGood(vector&lt;int&gt;&amp; nums, int k) &#123;        long long ans = 0;        unordered_map&lt;int, int&gt; cnt;        int pairs = 0, left = 0;        for (int x : nums) &#123;            pairs += cnt[x]++;//cnt[x]++的时候，这个数字还没有加只有当有一个的时候+0，但是现在是1了，再有一个数字的时候，在+0的基础上+1，正好对应两个相同的数字对应一对//当三个的时候，是+2，在+1的基础上＋2，也就是3，正好对应的是三个相同字符的时候是三对            whi...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/11/%E5%90%83%E5%AF%BF%E5%8F%B8,%E6%A6%82%E7%8E%87-%E6%9C%9F%E6%9C%9B%20DP/" title="吃寿司，概率/期望 DP">吃寿司，概率/期望 DP</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-11T07:07:00.000Z" title="发表于 2026-03-11 15:07:00">2026-03-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="content"> 原文链接：https://www.cnblogs.com/Time25/p/19702521.html [原题链接（https://atcoder.jp/contests/dp/tasks/dp_j）]code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485#include&lt;bits/stdc++.h&gt;using namespace std;//&quot;O campeão tem nome, e se chama Charles Oliveira!&quot;#define int long long#define endl &#x27;\n&#x27;#define ep emplace#define pob #define ll long long#define pb push_back#...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/10/Longest%20Path/" title="Longest Path">Longest Path</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-10T13:48:00.000Z" title="发表于 2026-03-10 21:48:00">2026-03-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="content"> 原文链接：https://www.cnblogs.com/Time25/p/19699216.html 题目大意这个是一个有向无环图，然后求最长的那个路径， 错误解法123456789void solve() &#123;  int n,m,rec=INT_MIN;cin&gt;&gt;n&gt;&gt;m;  vector&lt;int&gt;dp(n+1);  while(m--)&#123;    int x,y;cin&gt;&gt;x&gt;&gt;y;    dp[y]=max(dp[y],dp[x]+1);    rec=max(dp[y],rec);  &#125;  cout&lt;&lt;rec&lt;&lt;endl; 似乎把问题想的太简单了 错误原因3 22 31 21-&gt;2-&gt;3,应该是3但是你的写法会让答案是1，但是正确答案是2  因为你在处理2的时候，2是0，但是后面会跟3连，这个时候2又变成1了，但是1没有被记录进去究其原因就是，题目不一定都是按照拓扑序拍好的，什么叫拓扑序？拓扑序（Topological Order），简单来说，就是...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/10/LCS%E6%A0%87%E5%87%86/" title="LCS标准">LCS标准</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-10T05:28:00.000Z" title="发表于 2026-03-10 13:28:00">2026-03-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="content"> 原文链接：https://www.cnblogs.com/Time25/p/19696461.html atcoder dp 题单 中的LCS（https://atcoder.jp/contests/dp/tasks） code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657#include&lt;bits/stdc++.h&gt;using namespace std;//&quot;O campeão tem nome, e se chama Charles Oliveira!&quot;#define int long long#define endl &#x27;\n&#x27;#define ep emplace#define pob #define ll long long#define pb push_back#define pof pop_front#define pob pop_back#define...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/09/%E4%B8%AD%E5%BF%83%E6%8B%93%E5%B1%95%E6%B3%95%E6%B1%82%E5%9B%9E%E6%96%87/" title="中心拓展法求回文">中心拓展法求回文</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-09T13:22:00.000Z" title="发表于 2026-03-09 21:22:00">2026-03-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="content"> 原文链接：https://www.cnblogs.com/Time25/p/19694090.html 牛客134 F题目大意：给一个字符串，求的是这个字符串的的总价值，这个总价值的求法是，这个字符串中所有回文连续子字符串的价值总和，这个回文子字符串的价值总和就是这个子字符串的长度的平方（这位更是重量级：（https://anoth3r.top/nkwk134/）） code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include&lt;bits/stdc++.h&gt;using namespace std;//&quot;O campeão tem nome, e se chama Charles Oliveira!&quot;#define int long long#define endl &#x27;\n&#x27;#define emplace ep#define pob #...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/05/Linux%20learning/" title="Linux learning">Linux learning</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-05T14:10:00.000Z" title="发表于 2026-03-05 22:10:00">2026-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="content"> 原文链接：https://www.cnblogs.com/Time25/p/19675258.html bash和Linux命令bash是解释器，所以 Bash 本身并不列出文件，它只是 调度程序执行。Linux命令的话是外部程序或者shell的内建命令生活化解释你：lsBash：好的，我去运行 /bin/ls/bin/ls：返回文件列表Bash：把结果显示给你  Shell、Terminal、Console三者关系Terminal和Shell关系用户 │ ▼Terminal（终端程序/界面） │ ▼Shell（命令解释器，例如 Bash） │ ▼Linux 命令 / 程序 │ ▼Linux 内核Terminal功能：接收键盘输入显示文本输出启动 shell打开 Ubuntu Terminal 时terminal program → 启动 bashShell的功能它的作用：读取命令解析命令执行命令返回结果Console（控制台）用户 │ ▼Console (tty1 tty2 …) │ ▼Shell │ ▼Linux commands Console = 系统级终端 (tty)...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/05/leetcode76.%20%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2(%E4%BC%A0%E5%BC%95%E7%94%A8%20unordered_map%E7%9A%84%E6%85%A2%20%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%95%B0%E7%BB%84%E6%9D%A5%E4%BB%A3%E6%9B%BF%E5%93%88%E5%B8%8C%E8%A1%A8)/" title="leetcode76. 最小覆盖子串（传引用 unordered_map的慢 可以用数组来代替哈希表）">leetcode76. 最小覆盖子串（传引用 unordered_map的慢 可以用数组来代替哈希表）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-05T11:21:00.000Z" title="发表于 2026-03-05 19:21:00">2026-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="content"> 原文链接：https://www.cnblogs.com/Time25/p/19674744.html 解法11234567891011121314151617181920212223242526272829class Solution&#123;bool is_covered(unordered_map&lt;int,int&gt;&amp;cnt_s,unordered_map&lt;int,int&gt;&amp;cnt_t)&#123;    for(int i=&#x27;A&#x27;;i&lt;=&#x27;Z&#x27;;i++)&#123;        if(cnt_s[i]&lt;cnt_t[i])return false;    &#125;    for(int i=&#x27;a&#x27;;i&lt;=&#x27;z&#x27;;i++)&#123;        if(cnt_s[i]&lt;cnt_t[i])return false;    &#125;    return true;&#125;    //检查这个s是不是可以覆盖tpubli...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/5/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/#content-inner">7</a><a class="page-number" href="/page/8/#content-inner">8</a><a class="extend next" rel="next" href="/page/7/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/catcoding.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Time</div><div class="author-info-description">算法训练 / 电影札记 / 夜间复盘</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/FMAN720"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/FMAN720" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/1131027701" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">精准大于力量时机胜过速度</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/31/leetcode%20O(n)%E6%89%BE%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%ACk%E4%B8%AA%E6%9C%80%E5%A4%A7%E7%9A%84%E5%85%83%E7%B4%A0,%E5%88%A9%E7%94%A8%E7%9A%84%E6%98%AF%E7%B1%BB%E4%BC%BC%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%86%99%E6%B3%95,%E6%B6%89%E5%8F%8A%E5%88%B0%20Hoare%20%E5%88%92%E5%88%86/" title="leetcode O(n)找数组中第k个最大的元素，利用的是类似快速排序的写法，涉及到 Hoare 划分">leetcode O(n)找数组中第k个最大的元素，利用的是类似快速排序的写法，涉及到 Hoare 划分</a><time datetime="2026-05-31T12:31:00.000Z" title="发表于 2026-05-31 20:31:00">2026-05-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/22/%E4%B8%80%E5%88%99CF%E9%A2%98%E8%A7%A3/" title="一则CF题解">一则CF题解</a><time datetime="2026-05-22T13:14:00.000Z" title="发表于 2026-05-22 21:14:00">2026-05-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/14/java%20web%E5%AD%A6%E4%B9%A0--%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" title="java web学习--前端基础">java web学习--前端基础</a><time datetime="2026-05-14T12:44:00.000Z" title="发表于 2026-05-14 20:44:00">2026-05-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/13/java%E5%AD%A6%E4%B9%A0--NullPointerException/" title="java学习--NullPointerException">java学习--NullPointerException</a><time datetime="2026-05-13T03:55:00.000Z" title="发表于 2026-05-13 11:55:00">2026-05-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/13/java%E5%AD%A6%E4%B9%A0--%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8/" title="java学习--自定义异常">java学习--自定义异常</a><time datetime="2026-05-13T03:16:00.000Z" title="发表于 2026-05-13 11:16:00">2026-05-13</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8%E4%B8%AD%E7%9A%84%E9%82%A3%E4%BA%9B%E5%B0%8F%E5%8F%91%E7%8E%B0/"><span class="card-category-list-name">--算法学习日常中的那些小发现</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/movies/"><span class="card-category-list-name">movies</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/"><span class="card-category-list-name">博客园导入</span><span class="card-category-list-count">64</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E4%B8%8A%E5%86%8C-%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%93%BE%E8%A1%A8/"><span class="card-category-list-name">算法竞赛上册 第一章基础数据结构 链表</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/LeetCode/" style="font-size: 1.1em; color: #999">LeetCode</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 1.1em; color: #999">动态规划</a> <a href="/tags/cnblogs/" style="font-size: 1.5em; color: #99a9bf">cnblogs</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 1.1em; color: #999">链表</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              五月 2026
+            </span>
+            <span class="card-archive-list-count">14</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/04/">
+            <span class="card-archive-list-date">
+              四月 2026
+            </span>
+            <span class="card-archive-list-count">21</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/03/">
+            <span class="card-archive-list-date">
+              三月 2026
+            </span>
+            <span class="card-archive-list-count">29</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/02/">
+            <span class="card-archive-list-date">
+              二月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              一月 2026
+            </span>
+            <span class="card-archive-list-count">7</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">73</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-06-11T16:37:43.708Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Time</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.3</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.3"></script><script src="/js/main.js?v=5.5.3"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.3"></script></div></div></body></html>

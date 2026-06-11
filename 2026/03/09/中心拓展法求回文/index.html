@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>中心拓展法求回文 | 时间是世界上最珍贵的东西</title><meta name="author" content="Time"><meta name="copyright" content="Time"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="原文链接：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;Time25&#x2F;p&#x2F;19694090.html 牛客134 F题目大意：给一个字符串，求的是这个字符串的的总价值，这个总价值的求法是，这个字符串中所有回文连续子字符串的价值总和，这个回文子字符串的价值总和就是这个子字符串的长度的平方（这位更是重量级：（https:&#x2F;&#x2F;anoth3r.top&#x2F;nkwk134&#x2F;）） code1234567891">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中心拓展法求回文">
+<meta property="og:url" content="https://fman720.github.io/2026/03/09/%E4%B8%AD%E5%BF%83%E6%8B%93%E5%B1%95%E6%B3%95%E6%B1%82%E5%9B%9E%E6%96%87/index.html">
+<meta property="og:site_name" content="时间是世界上最珍贵的东西">
+<meta property="og:description" content="原文链接：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;Time25&#x2F;p&#x2F;19694090.html 牛客134 F题目大意：给一个字符串，求的是这个字符串的的总价值，这个总价值的求法是，这个字符串中所有回文连续子字符串的价值总和，这个回文子字符串的价值总和就是这个子字符串的长度的平方（这位更是重量级：（https:&#x2F;&#x2F;anoth3r.top&#x2F;nkwk134&#x2F;）） code1234567891">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fman720.github.io/img/catcoding.webp">
+<meta property="article:published_time" content="2026-03-09T13:22:00.000Z">
+<meta property="article:modified_time" content="2026-03-09T13:22:00.000Z">
+<meta property="article:author" content="Time">
+<meta property="article:tag" content="cnblogs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fman720.github.io/img/catcoding.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "中心拓展法求回文",
+  "url": "https://fman720.github.io/2026/03/09/%E4%B8%AD%E5%BF%83%E6%8B%93%E5%B1%95%E6%B3%95%E6%B1%82%E5%9B%9E%E6%96%87/",
+  "image": "https://fman720.github.io/img/catcoding.webp",
+  "datePublished": "2026-03-09T13:22:00.000Z",
+  "dateModified": "2026-03-09T13:22:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Time",
+      "url": "https://FMAN720.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fman720.github.io/2026/03/09/%E4%B8%AD%E5%BF%83%E6%8B%93%E5%B1%95%E6%B3%95%E6%B1%82%E5%9B%9E%E6%96%87/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 7 || hour >= 22
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '中心拓展法求回文',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css?v=20260611b"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/catcoding.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-dumbbell"></i><span> 训练场</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-id-card"></i><span> 选手卡</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影音室</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">时间是世界上最珍贵的东西</span></a><a class="nav-page-title" href="/"><span class="site-name">中心拓展法求回文</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-dumbbell"></i><span> 训练场</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-id-card"></i><span> 选手卡</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影音室</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">中心拓展法求回文</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-09T13:22:00.000Z" title="发表于 2026-03-09 21:22:00">2026-03-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-09T13:22:00.000Z" title="更新于 2026-03-09 21:22:00">2026-03-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%AF%BC%E5%85%A5/">博客园导入</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Time25/p/19694090.html">https://www.cnblogs.com/Time25/p/19694090.html</a></p>
+<h1 id="牛客134-F"><a href="#牛客134-F" class="headerlink" title="牛客134 F"></a>牛客134 F</h1><h2 id="题目大意："><a href="#题目大意：" class="headerlink" title="题目大意："></a>题目大意：</h2><p>给一个字符串，求的是这个字符串的的总价值，这个总价值的求法是，这个字符串中所有回文连续子字符串的价值总和，这个回文子字符串的价值总和就是这个子字符串的长度的平方<br>（这位更是重量级：（<a target="_blank" rel="noopener" href="https://anoth3r.top/nkwk134/））">https://anoth3r.top/nkwk134/））</a></p>
+<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">//&quot;O campeão tem nome, e se chama Charles Oliveira!&quot;</span><br><span class="line">#define int long long</span><br><span class="line">#define endl &#x27;\n&#x27;</span><br><span class="line">#define emplace ep</span><br><span class="line">#define pob </span><br><span class="line">#define ll long long</span><br><span class="line">#define pb push_back</span><br><span class="line">#define pof pop_front</span><br><span class="line">#define pob pop_back</span><br><span class="line">#define all(a) a.begin(),a.end()</span><br><span class="line">#define rall(a) a.rbegin(),a.rend()</span><br><span class="line">#define mod 998244353</span><br><span class="line">#define MOD 1000000007</span><br><span class="line"></span><br><span class="line">using ld = long double;</span><br><span class="line">using ui = unsigned;</span><br><span class="line">using ull = unsigned long long;</span><br><span class="line">using i128 = __int128;</span><br><span class="line"></span><br><span class="line">//求回文的中心拓展法</span><br><span class="line">//牛客134 F</span><br><span class="line">void solve() &#123;</span><br><span class="line">    int n;</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; s;</span><br><span class="line">    vector&lt;vector&lt;bool&gt;&gt; flag(n + 1, vector&lt;bool&gt;(n + 1));</span><br><span class="line">    for (int i = 0; i &lt; n; ++i) &#123;</span><br><span class="line">        int l = i, r = i;</span><br><span class="line">        while (l &gt;= 0 &amp;&amp; r &lt; n &amp;&amp; s[l] == s[r]) &#123;</span><br><span class="line">            flag[l + 1][r + 1] = 1;</span><br><span class="line">            l--, r++;</span><br><span class="line">        &#125;</span><br><span class="line">        l = i, r = i + 1;</span><br><span class="line">        while (l &gt;= 0 &amp;&amp; r &lt; n &amp;&amp; s[l] == s[r]) &#123;</span><br><span class="line">            flag[l + 1][r + 1] = 1;</span><br><span class="line">            l--, r++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;int&gt; dp1(n + 1), dp2(n + 1);</span><br><span class="line">    //dp1是方案数字，dp2是总的价值数</span><br><span class="line">    // dp1是前缀1到i的方案数的总和</span><br><span class="line">    //dp2是前缀1到i的价值数的总和</span><br><span class="line">    dp1[0] = 1, dp2[0] = 0;</span><br><span class="line">    for (int i = 1; i &lt;= n; ++i) &#123;</span><br><span class="line">        for (int j = 0; j &lt; i; ++j) &#123;</span><br><span class="line">            if (flag[j + 1][i]) &#123;</span><br><span class="line">                dp1[i]=(dp1[i]+dp1[j])%mod;</span><br><span class="line">                dp2[i]=(dp2[i]+dp2[j] + dp1[j] * (i - j) * (i - j))%mod;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; dp2[n]%mod &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">signed main()&#123;</span><br><span class="line">    ios::sync_with_stdio(false);</span><br><span class="line">    cin.tie(nullptr);</span><br><span class="line">    cout.tie(nullptr);</span><br><span class="line">    int t=1;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    while(t--)solve();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://FMAN720.github.io">Time</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://fman720.github.io/2026/03/09/%E4%B8%AD%E5%BF%83%E6%8B%93%E5%B1%95%E6%B3%95%E6%B1%82%E5%9B%9E%E6%96%87/">https://fman720.github.io/2026/03/09/%E4%B8%AD%E5%BF%83%E6%8B%93%E5%B1%95%E6%B3%95%E6%B1%82%E5%9B%9E%E6%96%87/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://FMAN720.github.io" target="_blank">时间是世界上最珍贵的东西</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/cnblogs/">cnblogs</a></div><div class="post-share"><div class="social-share" data-image="/img/catcoding.webp" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/03/10/LCS%E6%A0%87%E5%87%86/" title="LCS标准"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">LCS标准</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19696461.html atcoder dp 题单 中的LCS（https://atcoder.jp/contests/dp/tasks） code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657#include&lt;bits/stdc++.h&gt;using namespace std;//&quot;O campeão tem nome, e se chama Charles Oliveira!&quot;#define int long long#define endl &#x27;\n&#x27;#define ep emplace#define pob #define ll long long#define pb push_back#define pof pop_front#define pob pop_back#define...</div></div></div></a><a class="pagination-related" href="/2026/03/05/Linux%20learning/" title="Linux learning"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Linux learning</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19675258.html bash和Linux命令bash是解释器，所以 Bash 本身并不列出文件，它只是 调度程序执行。Linux命令的话是外部程序或者shell的内建命令生活化解释你：lsBash：好的，我去运行 /bin/ls/bin/ls：返回文件列表Bash：把结果显示给你  Shell、Terminal、Console三者关系Terminal和Shell关系用户 │ ▼Terminal（终端程序/界面） │ ▼Shell（命令解释器，例如 Bash） │ ▼Linux 命令 / 程序 │ ▼Linux 内核Terminal功能：接收键盘输入显示文本输出启动 shell打开 Ubuntu Terminal 时terminal program → 启动 bashShell的功能它的作用：读取命令解析命令执行命令返回结果Console（控制台）用户 │ ▼Console (tty1 tty2 …) │ ▼Shell │ ▼Linux commands Console = 系统级终端 (tty)...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/03/05/leetcode2875.%20%E6%97%A0%E9%99%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E7%9F%AD%E5%AD%90%E6%95%B0%E7%BB%84(%E6%9C%89%E4%B8%AAlong%20long%E7%9A%84%E8%80%81%E9%97%AE%E9%A2%98%E8%A6%81%E6%B3%A8%E6%84%8F)/" title="leetcode2875. 无限数组的最短子数组（有个long long的老问题要注意）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-05</div><div class="info-item-2">leetcode2875. 无限数组的最短子数组（有个long long的老问题要注意）</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19674281.html 原题（https://leetcode.cn/problems/minimum-size-subarray-in-infinite-array/） 原题代码1234567891011121314151617181920class Solution &#123;public:    int minSizeSubarray(vector&lt;int&gt;&amp; nums, int target) &#123;        int n=nums.size(),ans=INT_MAX,left=0;        long long s=0;        long long total=accumulate(nums.begin(),nums.end(),0LL);//这里0也要加long long，不然还是以整数的类型相加的，在本题会数据溢出        long long res=target%total;        for(int i=0;i&lt;2*n;i...</div></div></div></a><a class="pagination-related" href="/2026/03/11/%E6%81%B0%E5%A5%BD%E5%9E%8B%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" title="恰好型滑动窗口"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-11</div><div class="info-item-2">恰好型滑动窗口</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19704828.html 和相同的二元子数组题目大意，就是求这个数组中和为k的子数组的个数 解题思路1：哈希map法123456789101112131415class Solution &#123;public:    int numSubarraysWithSum(vector&lt;int&gt;&amp; nums, int goal) &#123;        int n=nums.size();        unordered_map&lt;int,int&gt;mp;        int sum=0,ans=0;        for(int i=0;i&lt;n;i++)&#123;            mp[sum]++;            sum+=nums[i];            ans+=mp[sum-goal];        &#125;        return ans;    &#125;&#125;;//假设j~i这段区间的和是要求的k，求前缀和，...</div></div></div></a><a class="pagination-related" href="/2026/04/21/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%AD%A6%E4%B9%A0--%E5%86%85%E9%83%A8%E7%B1%BB/" title="java面向对象学习--内部类"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-21</div><div class="info-item-2">java面向对象学习--内部类</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19902880.html 什么是内部类还有一种类，它被定义在另一个类的内部，所以称为内部类（Nested Class）。Java的内部类分为好几种，通常情况用得不多，但也需要了解它们是如何使用的。 内部类只能依附于一个类，哪怕是实例化也要依附另外一个类1234567891011121314151617181920212223// inner classpublic class Main &#123;    public static void main(String[] args) &#123;        Outer outer = new Outer(&quot;Nested&quot;); // 实例化一个Outer        Outer.Inner inner = outer.new Inner(); // 实例化一个Inner        inner.hello();    &#125;&#125;class Outer &#123;    private String name; ...</div></div></div></a><a class="pagination-related" href="/2026/05/12/java%E5%AD%A6%E4%B9%A0---%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7/" title="java学习---异常捕获"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-12</div><div class="info-item-2">java学习---异常捕获</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/20023887.html 异常捕获规程1.只有要给catch的代码块会被执行  1234567891011public static void main(String[] args) &#123;    try &#123;        process1();        process2();        process3();    &#125; catch (IOException e) &#123;        System.out.println(e);    &#125; catch (NumberFormatException e) &#123;        System.out.println(e);    &#125;&#125; 2.catch要按照先放子类，再放父类，因为如果只先放父类，出现子类的异常就被父类的那个catch捕获了，那么子类就永远捕获不到12345678910111213public static void main(String[] args) &#1...</div></div></div></a><a class="pagination-related" href="/2026/04/14/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%AD%A6%E4%B9%A0--%E6%8E%A5%E5%8F%A3/" title="java面向对象学习--接口"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-14</div><div class="info-item-2">java面向对象学习--接口</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19867384.html 什么是接口如果一个抽象类没有任何字段的话，那可以把他抽象成一个接口，接口更加抽象1234abstract class Person &#123;    public abstract void run();    public abstract String getName();&#125;转变成1234interface Person &#123;    void run();    String getName();&#125; 当一个具体的class要去实现接口的时候,要用implements这个关键字123456789101112131415161718class Student implements Person &#123;    private String name;    public Student(String name) &#123;        this.name = name;    &#125;    @Override    public v...</div></div></div></a><a class="pagination-related" href="/2026/05/03/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B/" title="牛客周赛"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-03</div><div class="info-item-2">牛客周赛</div></div><div class="info-2"><div class="info-item-1"> 原文链接：https://www.cnblogs.com/Time25/p/19968416.html 题目链接https://ac.nowcoder.com/acm/contest/133523/E经典的构造标准的零分题目大意就是，给你n个节点，要求这n个节点构成的树的到每个叶子节点的距离是一个m的排列，也就是m级树 题目解析注意到题目说是树，不是二叉树，假设有要求是m级树，那么就有最小节点数构造方法和最大构造数方法，分别如下： 1.最小方法：可以知道，最小方法得出，n的最小值至少得是2*m 2.最大方法可以得到，如果是m级树，那么n最大只能是（m+(m+1)）/2+11234567891011int n,m;    cin &gt;&gt; n &gt;&gt; m;    if (m==1) &#123;        if (n!=2) cout &lt;&lt;&quot;NO&quot;&lt;&lt;el;        else &#123;            cout &lt;&lt; &quot;YES&quot;&lt;&lt;el;         ...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/catcoding.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Time</div><div class="author-info-description">算法训练 / 电影札记 / 夜间复盘</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/FMAN720"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/FMAN720" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/1131027701" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">精准大于力量时机胜过速度</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%9B%E5%AE%A2134-F"><span class="toc-number">1.</span> <span class="toc-text">牛客134 F</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#code"><span class="toc-number">1.2.</span> <span class="toc-text">code</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/31/leetcode%20O(n)%E6%89%BE%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%ACk%E4%B8%AA%E6%9C%80%E5%A4%A7%E7%9A%84%E5%85%83%E7%B4%A0,%E5%88%A9%E7%94%A8%E7%9A%84%E6%98%AF%E7%B1%BB%E4%BC%BC%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%86%99%E6%B3%95,%E6%B6%89%E5%8F%8A%E5%88%B0%20Hoare%20%E5%88%92%E5%88%86/" title="leetcode O(n)找数组中第k个最大的元素，利用的是类似快速排序的写法，涉及到 Hoare 划分">leetcode O(n)找数组中第k个最大的元素，利用的是类似快速排序的写法，涉及到 Hoare 划分</a><time datetime="2026-05-31T12:31:00.000Z" title="发表于 2026-05-31 20:31:00">2026-05-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/22/%E4%B8%80%E5%88%99CF%E9%A2%98%E8%A7%A3/" title="一则CF题解">一则CF题解</a><time datetime="2026-05-22T13:14:00.000Z" title="发表于 2026-05-22 21:14:00">2026-05-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/14/java%20web%E5%AD%A6%E4%B9%A0--%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" title="java web学习--前端基础">java web学习--前端基础</a><time datetime="2026-05-14T12:44:00.000Z" title="发表于 2026-05-14 20:44:00">2026-05-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/13/java%E5%AD%A6%E4%B9%A0--NullPointerException/" title="java学习--NullPointerException">java学习--NullPointerException</a><time datetime="2026-05-13T03:55:00.000Z" title="发表于 2026-05-13 11:55:00">2026-05-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/13/java%E5%AD%A6%E4%B9%A0--%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8/" title="java学习--自定义异常">java学习--自定义异常</a><time datetime="2026-05-13T03:16:00.000Z" title="发表于 2026-05-13 11:16:00">2026-05-13</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Time</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.3</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.3"></script><script src="/js/main.js?v=5.5.3"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.3"></script></div></div></body></html>
