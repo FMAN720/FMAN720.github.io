@@ -210,6 +210,21 @@ html[data-theme='dark'] img {
   background: linear-gradient(90deg, rgba(5, 10, 18, 0.7), rgba(5, 10, 18, 0.08) 50%, rgba(5, 10, 18, 0.34)) !important;
 }
 
+/* Categories page: keep the whole banner image visible. */
+.type-categories #page-header.not-home-page {
+  height: 42vh !important;
+  min-height: 280px;
+  max-height: 430px;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-color: #0d1117 !important;
+}
+
+.type-categories #page-header.not-home-page::before {
+  background: linear-gradient(90deg, rgba(5, 10, 18, 0.62), rgba(5, 10, 18, 0.08) 50%, rgba(5, 10, 18, 0.32)) !important;
+}
+
 .type-about #page-site-info {
   text-align: left;
   width: min(980px, calc(100% - 48px));
