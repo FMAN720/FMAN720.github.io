@@ -398,15 +398,29 @@ html[data-theme='dark'] .profile-grid > div {
   border-color: rgba(226, 232, 240, 0.12);
 }
 
+/* Keep the footer clean instead of the default blue band. */
+#footer {
+  background: transparent !important;
+}
+
+#footer::before {
+  background: transparent !important;
+}
+
+#footer,
+#footer a {
+  color: var(--card-meta) !important;
+}
+
 /* Small black hole ornament in the lower-left corner. */
 .corner-blackhole {
   position: fixed;
   left: 22px;
   bottom: 22px;
-  z-index: 90;
+  z-index: 9999;
   display: flex;
-  width: 72px;
-  height: 72px;
+  width: 86px;
+  height: 86px;
   align-items: center;
   justify-content: center;
   pointer-events: none;
@@ -414,6 +428,7 @@ html[data-theme='dark'] .profile-grid > div {
 
 .corner-blackhole__curve {
   position: absolute;
+  z-index: 2;
   width: 160%;
   height: 160%;
   animation: cornerBlackholeRotate 8s linear infinite;
@@ -430,10 +445,10 @@ html[data-theme='dark'] .profile-grid > div {
 
 .corner-blackhole__core {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   display: flex;
-  width: 72px;
-  height: 72px;
+  width: 86px;
+  height: 86px;
   align-items: center;
   justify-content: center;
 }
@@ -468,8 +483,8 @@ html[data-theme='dark'] .profile-grid > div {
 .corner-blackhole__circle::before {
   z-index: 1;
   display: flex;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border: 2px solid #fff;
   border-radius: 50%;
   box-shadow: 3px 3px 10px #c2babb, inset 0 0 14px #fff;
@@ -482,8 +497,8 @@ html[data-theme='dark'] .profile-grid > div {
   position: absolute;
   z-index: 0;
   display: flex;
-  width: 46px;
-  height: 88px;
+  width: 54px;
+  height: 104px;
   border: 10px solid white;
   border-radius: 50%;
   background: radial-gradient(circle at center, #fff 80%, #353535 90%, white 100%);
@@ -497,8 +512,8 @@ html[data-theme='dark'] .profile-grid > div {
   position: absolute;
   z-index: 0;
   display: flex;
-  width: 46px;
-  height: 88px;
+  width: 54px;
+  height: 104px;
   border: 10px solid white;
   border-radius: 50%;
   background: radial-gradient(circle at center, #fff 80%, #353535 90%, white 100%);
