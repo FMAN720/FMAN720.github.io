@@ -1,3 +1,33 @@
+/* 全局字体：优先使用系统自带的中文黑体，保证各平台渲染一致 */
+body {
+  font-family: "HarmonyOS Sans SC", "MiSans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 自定义滚动条：细窄、圆角，白天蓝色 / 夜间深灰 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7242;
+}
+
+html[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: #f08a5d;
+}
+
 /* 调整搜索图标的大小和位置 */
 #search-button {
   font-size: 1.4rem !important; /* 调整图标大小，数字越大图标越大 (默认通常是 1rem) */
@@ -122,14 +152,12 @@ html[data-theme='dark'] img {
   background: rgba(0, 0, 0, 0.22);
 }
 
-#site-info::after {
-  content: "算法训练 / 电影札记 / 白天学习 / 深夜复盘";
-  display: block;
-  max-width: 560px;
-  margin-top: 16px;
+/* 首页副标题由 _config.butterfly.yml 的 subtitle 配置渲染（#site-subtitle） */
+#site-subtitle {
   color: rgba(255, 255, 255, 0.86);
   font-size: 1rem;
   line-height: 1.8;
+  margin-top: 16px;
 }
 
 #site-title {
@@ -412,150 +440,7 @@ html[data-theme='dark'] .profile-grid > div {
   color: var(--card-meta) !important;
 }
 
-/* Small black hole ornament in the lower-left corner. */
-.corner-blackhole {
-  position: fixed;
-  left: 22px;
-  bottom: 22px;
-  z-index: 9999;
-  display: flex;
-  width: 86px;
-  height: 86px;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.corner-blackhole__curve {
-  position: absolute;
-  z-index: 2;
-  width: 160%;
-  height: 160%;
-  animation: cornerBlackholeRotate 8s linear infinite;
-  fill: transparent;
-}
-
-.corner-blackhole__curve text {
-  letter-spacing: 20px;
-  text-transform: uppercase;
-  font: 1.5em "Fira Sans", sans-serif;
-  fill: rgba(255, 255, 255, 0.92);
-  filter: drop-shadow(0 2px 8px black);
-}
-
-.corner-blackhole__core {
-  position: absolute;
-  z-index: 1;
-  display: flex;
-  width: 86px;
-  height: 86px;
-  align-items: center;
-  justify-content: center;
-}
-
-.corner-blackhole__circle {
-  z-index: 0;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, black 25%, white 35%, white 100%);
-  box-shadow: 0 0 18px #c2babb;
-  align-items: center;
-  justify-content: center;
-}
-
-.corner-blackhole__circle::after {
-  position: absolute;
-  z-index: 0;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  border: 3px solid white;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, black 35%, white 60%, white 100%);
-  box-shadow: 0 0 36px #c2babb;
-  content: "";
-  filter: blur(4px);
-  animation: cornerBlackholePulse linear infinite 2s alternate-reverse;
-}
-
-.corner-blackhole__circle::before {
-  z-index: 1;
-  display: flex;
-  width: 42px;
-  height: 42px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  box-shadow: 3px 3px 10px #c2babb, inset 0 0 14px #fff;
-  content: "";
-  filter: blur(0.5px);
-  animation: cornerBlackholeRotate linear infinite 3s;
-}
-
-.corner-blackhole__disc {
-  position: absolute;
-  z-index: 0;
-  display: flex;
-  width: 54px;
-  height: 104px;
-  border: 10px solid white;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, #fff 80%, #353535 90%, white 100%);
-  box-shadow: 0 0 28px #d7c4be;
-  filter: blur(10px) brightness(130%);
-  transform: rotate3d(1, 1, 1, 220deg);
-  animation: cornerBlackholeDiscPulse linear infinite 2s alternate-reverse;
-}
-
-.corner-blackhole__disc::before {
-  position: absolute;
-  z-index: 0;
-  display: flex;
-  width: 54px;
-  height: 104px;
-  border: 10px solid white;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, #fff 80%, #353535 90%, white 100%);
-  box-shadow: 0 0 46px #d7c4be;
-  content: "";
-  filter: blur(28px);
-  animation: cornerBlackholePulse linear infinite 2s alternate-reverse;
-}
-
-@keyframes cornerBlackholeRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes cornerBlackholePulse {
-  0% {
-    box-shadow: 0 0 22px #c2babb;
-    transform: scale(1);
-  }
-
-  100% {
-    box-shadow: 0 0 38px #c2babb;
-    transform: scale(1.09);
-  }
-}
-
-@keyframes cornerBlackholeDiscPulse {
-  0% {
-    box-shadow: 0 0 22px #c2babb;
-    transform: rotate3d(1, 1, 1, 220deg) scale(1);
-  }
-
-  100% {
-    box-shadow: 0 0 38px #c2babb;
-    transform: rotate3d(1, 1, 1, 220deg) scale(0.95);
-  }
-}
+/* 右下角黑洞装饰已随 inject 配置移除 */
 
 @media (max-width: 768px) {
   #site-info {
@@ -566,7 +451,7 @@ html[data-theme='dark'] .profile-grid > div {
     font-size: 2.05rem !important;
   }
 
-  #site-info::after {
+  #site-subtitle {
     font-size: 0.92rem;
   }
 
@@ -577,18 +462,5 @@ html[data-theme='dark'] .profile-grid > div {
 
   .movie-room {
     padding: 20px;
-  }
-
-  .corner-blackhole {
-    left: 14px;
-    bottom: 14px;
-    width: 56px;
-    height: 56px;
-    opacity: 0.72;
-  }
-
-  .corner-blackhole__core {
-    width: 56px;
-    height: 56px;
   }
 }
