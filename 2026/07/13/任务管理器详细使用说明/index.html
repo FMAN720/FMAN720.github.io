@@ -1,170 +1,239 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>任务管理器详细使用说明 | FMAN720 / ALGO LOG</title><meta name="author" content="FMAN720"><meta name="copyright" content="FMAN720"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="任务管理器说明添加任务点击进入任务管理器之后，在“What needs doing”处写入你要的任务，建议以如下格式写  7-12 今天我要超过爱因斯坦在添加任务的左侧有一个“每日按钮”，点击这个每日按钮之后，就可以在右边 每日任务栏看到你添加的这个任务，只要添加到这个每日任务栏，这个任务就代表是你每天都要做的任务">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>任务管理器详细使用说明 | FMAN720 / ALGO LOG</title><noscript>开启 JavaScript 后才能访问本站</noscript><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="/css/index.css?v=4.0.0"><link rel="canonical" href="https://fman720.github.io/2026/07/13/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/index.html"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css?v=7.3.0"><!-- Feature-specific CSS--><!-- aplayer--><!-- swiper--><!-- fancybox ui--><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css?v=6.1.14"><!-- katex--><!-- Open Graph--><meta name="description" content="任务管理器说明添加任务点击进入任务管理器之后，在“What needs doing”处写入你要的任务，建议以如下格式写  7-12 今天我要超过爱因斯坦在添加任务的左侧有一个“每日按钮”，点击这个每日按钮之后，就可以在右边 每日任务栏看到你添加的这个任务，只要添加到这个每日任务栏，这个任务就代表是你每天都要做的任务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="任务管理器详细使用说明">
 <meta property="og:url" content="https://fman720.github.io/2026/07/13/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/index.html">
 <meta property="og:site_name" content="FMAN720 &#x2F; ALGO LOG">
 <meta property="og:description" content="任务管理器说明添加任务点击进入任务管理器之后，在“What needs doing”处写入你要的任务，建议以如下格式写  7-12 今天我要超过爱因斯坦在添加任务的左侧有一个“每日按钮”，点击这个每日按钮之后，就可以在右边 每日任务栏看到你添加的这个任务，只要添加到这个每日任务栏，这个任务就代表是你每天都要做的任务">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://fman720.github.io/img/catcoding.webp">
+<meta property="og:image" content="https://fman720.github.io/img/favicon.png">
 <meta property="article:published_time" content="2026-07-13T09:32:17.000Z">
 <meta property="article:modified_time" content="2026-08-17T05:06:19.420Z">
 <meta property="article:author" content="FMAN720">
 <meta property="article:tag" content="任务管理">
 <meta property="article:tag" content="效率">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://fman720.github.io/img/catcoding.webp"><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "任务管理器详细使用说明",
-  "url": "https://fman720.github.io/2026/07/13/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/",
-  "image": "https://fman720.github.io/img/catcoding.webp",
-  "datePublished": "2026-07-13T09:32:17.000Z",
-  "dateModified": "2026-08-17T05:06:19.420Z",
-  "author": [
-    {
-      "@type": "Person",
-      "name": "FMAN720",
-      "url": "https://FMAN720.github.io"
-    }
-  ]
-}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fman720.github.io/2026/07/13/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
+<meta name="twitter:image" content="https://fman720.github.io/img/favicon.png"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="FMAN720 / ALGO LOG"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/favicon.png" sizes="180x180"><script>console.log(' %c Solitude %c ' + '4.0.0' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><link rel="stylesheet" href="/css/custom.css?v=solitude1"><script>(()=>{
+        const parseConfig = (id) => {
+            const element = document.getElementById(id)
+            if (!element) return {}
+            try {
+                return JSON.parse(element.content?.textContent || element.textContent || '{}')
+            } catch (error) {
+                console.error('Invalid Solitude config:', error)
+                return {}
+            }
         }
-        return value
-      }
-    }
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
 
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
-  
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
+                if (!itemStr) {
+                    return undefined
+                }
+                let item
+                try {
+                    item = JSON.parse(itemStr)
+                } catch (error) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                const now = new Date()
 
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        const resourceRequests = new Map()
+        const loadResource = (url, create) => {
+            const absoluteUrl = new URL(url, document.baseURI).href
+            if (resourceRequests.has(absoluteUrl)) return resourceRequests.get(absoluteUrl)
+            const request = new Promise((resolve, reject) => {
+                const element = create(absoluteUrl)
+                element.addEventListener('load', () => resolve(element), {once: true})
+                element.addEventListener('error', () => {
+                    resourceRequests.delete(absoluteUrl)
+                    reject(new Error('Unable to load ' + absoluteUrl))
+                }, {once: true})
+                document.head.appendChild(element)
+            })
+            resourceRequests.set(absoluteUrl, request)
+            return request
+        }
+        const api = window.Solitude || {}
+        window.Solitude = api
+        api.installLegacyAdapter = () => {
+            const aliases = {
+                utils: api,
+                sco: api,
+                GLOBAL_CONFIG: api.config
+            }
+            Object.entries(aliases).forEach(([name, value]) => {
+                if (name in window) return
+                Object.defineProperty(window, name, {
+                    configurable: true,
+                    enumerable: false,
+                    value
+                })
+            })
+        }
+        Object.defineProperties(api, {
+            config: {configurable: true, get: () => parseConfig('site-config')},
+            page: {configurable: true, get: () => parseConfig('config-diff')}
+        })
+        Object.assign(api, {
+            saveToLocal: saveToLocal,
+            loadStyle: (url, options = {}) => loadResource(url, href => {
+                const link = document.createElement('link')
+                link.rel = 'stylesheet'
+                link.href = href
+                if (options.id) link.id = options.id
+                return link
+            }),
+            loadScript: (url, options = {}) => {
+              if (url.includes('barrage')) api.installLegacyAdapter()
+              return loadResource(url, src => {
+                const script = document.createElement('script')
+                script.src = src
+                script.async = options.async !== false
+                Object.entries(options.attributes || {}).forEach(([key, value]) => script.setAttribute(key, value))
+                return script
+              })
+            },
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
 
-      const theme = saveToLocal.get('theme')
-    
-          const hour = new Date().getHours()
-          const isNight = hour <= 7 || hour >= 22
-          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
-          else theme === 'light' ? activateLightMode() : activateDarkMode()
-        
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
-    
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              api.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
+        })
+        api.getCSS = (url, id = false) => api.loadStyle(url, {id})
+        api.getScript = (url, attr = {}) => api.loadScript(url, {attributes: attr})
+        api.on = (name, handler) => {
+            const eventName = 'solitude:' + name
+            document.addEventListener(eventName, handler)
+            return () => document.removeEventListener(eventName, handler)
+        }
+        api.navigate = url => api.pjax?.loadUrl ? api.pjax.loadUrl(url) : window.location.assign(url)
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = Solitude.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
     }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyloadPlugin: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '任务管理器详细使用说明',
-  isHighlightShrink: false,
-  isToc: true,
-  pageType: 'post'
-}</script><link rel="stylesheet" href="/css/custom.css?v=20260817c"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/catcoding.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">76</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-terminal"></i><span> 训练场</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-layer-group"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-clock-rotate-left"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-id-card"></i><span> 选手卡</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影音室</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">FMAN720 / ALGO LOG</span></a><a class="nav-page-title" href="/"><span class="site-name">任务管理器详细使用说明</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-terminal"></i><span> 训练场</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-layer-group"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-clock-rotate-left"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-id-card"></i><span> 选手卡</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影音室</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">任务管理器详细使用说明</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-07-13T09:32:17.000Z" title="发表于 2026-07-13 17:32:17">2026-07-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-08-17T05:06:19.420Z" title="更新于 2026-08-17 13:06:19">2026-08-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/">效率工具</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">129</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="任务管理器说明"><a href="#任务管理器说明" class="headerlink" title="任务管理器说明"></a>任务管理器说明</h1><h2 id="添加任务"><a href="#添加任务" class="headerlink" title="添加任务"></a>添加任务</h2><p><strong><em>点击进入任务管理器之后，在“What needs doing”处写入你要的任务，建议以如下格式写</em></strong></p>
+    Solitude.rightMenu?.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><template id="site-config">{"root":"/","algolia":null,"localsearch":{"preload":false,"path":"/search.xml"},"runtime":"2025-01-01 00:00:00","lazyload":{"enable":true,"error":"/img/404.jpg"},"copyright":false,"highlight":{"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},"friend_links":{"async":false,"path":"/links.json","total":0,"placeholder":"","default_avatar":"/img/default_avatar.avif","more_url":"/links/","loading":"正在加载友链…","error":"友链加载失败，请稍后重试。","retry":"重新加载","random":"点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋","to":"前往","more":"更多","default_sort":"默认排序","random_sort":"随机排序","sort_label":"切换排序方式","scroll_left":"向左滚动","scroll_right":"向右滚动"},"random_posts":["2026/07/23/MySql学习/","2026/07/17/springboot学习--bilibili项目学习/","2026/07/13/任务管理器详细使用说明/","2026/06/12/javaweb学习--测试/","2026/06/12/夜里小记/","2026/05/31/leetcode O(n)找数组中第k个最大的元素,利用的是类似快速排序的写法,涉及到 Hoare 划分/","2026/05/22/一则CF题解/","2026/05/14/java web学习--前端基础/","2026/05/13/java学习--NullPointerException/","2026/05/13/java学习--自定义异常/","2026/05/12/newcoder 周赛143 C 费马小定理和质因数分解相关优化/","2026/05/12/java学习--抛出异常/","2026/05/12/java学习---异常捕获/","2026/05/12/java学习--异常处理/","2026/05/04/洛谷 p2537 滑雪 最小生成树的利用 最小生成树在有向图中为什么不可以,在这题中为什么又-可以-/","2026/05/03/Atcoder abc 456 分层图+方向拓扑/","2026/05/03/Atcoder 437 E 字典树相关/","2026/05/03/牛客周赛/","2026/04/23/连续异或的结果/","2026/04/22/牛客周赛140F 直角三角形/","2026/04/21/java字符串和编码学习/","2026/04/21/java面向对象学习--内部类/","2026/04/19/java面向对象学习--作用域/","2026/04/19/java面向对象学习--包/","2026/04/19/java面向对象学习--静态字段和静态方法/","2026/04/14/java面向对象学习--接口/","2026/04/14/java面向对象学习--抽象类-cnblogs/","2026/04/12/CF训练字符串小结论/","2026/04/11/ATcoder abc 453C题 状态压缩枚举,暂时没找到别的写法/","2026/04/10/牛客137最后贪心小结论/","2026/04/08/Atcoder 452 D/","2026/04/07/Task Tracker Cli项目学习日志/","2026/04/06/P1347 [ECNA 2001] 排序/","2026/04/05/1089div2 C1A Simple GCD Problem (Easy Version)/","2026/04/02/1079div1A. Game with a Fraction/","2026/04/01/O - Matching AT_DP 状态压缩DP/","2026/04/01/N - Slimes.atcoder Dp题单/","2026/04/01/1089 C1题解/","2026/03/31/牛客周赛137D/","2026/03/31/java面向对象学习--抽象类/","2026/03/31/java中的 ...--语法/","2026/03/31/java学习--static/","2026/03/30/java面向对象学习--多态/","2026/03/28/atcoder abc 438D/","2026/03/27/atcoder 439D/","2026/03/27/atcoder ABC 439 E/","2026/03/26/atcoder 440 C/","2026/03/26/atcoder 440 D/","2026/03/24/牛客周赛136F题/","2026/03/18/codeforces 1084 div3/","2026/03/14/leet3775/","2026/03/13/C++20 auto &&写法/","2026/03/13/AT_abc447_E 并查集的应用/","2026/03/12/atcoder_abc_447D惨烈实况/","2026/03/11/aeiou和小巧思/","2026/03/11/恰好型滑动窗口/","2026/03/11/++a a++的一些在滑动窗口中的用法/","2026/03/11/吃寿司,概率-期望 DP/","2026/03/10/Longest Path/","2026/03/10/LCS标准/","2026/03/09/中心拓展法求回文/","2026/03/05/Linux learning/","2026/03/05/leetcode76. 最小覆盖子串(传引用 unordered_map的慢 可以用数组来代替哈希表)/","2026/03/05/leetcode2875. 无限数组的最短子数组(有个long long的老问题要注意)/","2026/03/04/灵神题单滑动窗口可获得的最大点数(洛谷1423)思考题题解/","2026/03/04/快速排序基础递归版/","2026/03/04/快速排序优化/","2026/02/01/杀手蝴蝶梦影评/","2026/02/01/牛客周赛129费马小定理/","2026/01/31/被解救的姜戈影评/","2026/01/31/美国X档案影评/","2026/01/31/花样年华影评/","2026/01/30/两杆大烟枪影评/","2026/01/30/铁拳男人影评/","2026/01/27/链表/","2026/01/26/hello-world/"],"randomlink":false,"feature_modules":{"search":"local","post_ai":false,"friend_links":false,"music":false,"right_menu":true,"translate":true,"covercolor":false},"lang":{"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已开启，请遵守 GPL 协议。","totalk":"无需删除空行，直接输入评论即可","search":{"empty":"找不到你查询的内容：${query}","hit":"找到 ${hits} 条结果，用时 ${time} 毫秒","placeholder":"输入关键词快速查找","count":"共 \u003cb>${count}\u003c/b> 条结果。","loading":"搜索中…"}},"aside":{"state":{"morning":"✨ 早上好，新的一天开始了","noon":"🍲 午餐时间","afternoon":"🌞 下午好","night":"早点休息","goodnight":"晚安 😴"},"witty_words":["你可以的","精准大于力量，时机胜过速度","远方盛大，先把今天这一题写完"],"witty_comment":{"prefix":"好久不见，","back":"欢迎回来，"}},"covercolor":{"enable":false,"mode":"local","api":"https://api.qjqq.cn/api/Imgcolor?img=","time":43200000},"comment":false,"lightbox":"fancybox","right_menu":{"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","translate":false},"translate":{"translateDelay":0,"defaultEncoding":2,"toSimplified":"转为简体","toTraditional":"转为繁体","switchedToSimplified":"已切换为简体中文","switchedToTraditional":"已切换为繁体中文"},"lure":false,"expire":false}</template><template id="config-diff">{"is_post":true,"is_page":false,"is_home":false,"page":"post","toc":true,"comment":false,"ai_text":false,"color":false}</template><meta name="generator" content="Hexo 8.1.1"></head><body id="body"><div><canvas id="universe"></canvas></div><div id="console"><div class="console-content"><div class="console-card-group" data-solitude-action="onConsoleCardGroupClick" data-solitude-event="true"><div class="console-card-group-right"><div class="console-card tags" data-solitude-action="hideConsole"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">探索感兴趣的内容</div></div><div class="card-tag-cloud"><a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/">博弈论<sup>1</sup></a><a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">滑动窗口<sup>2</sup></a><a href="/tags/%E5%B0%8F%E7%BB%86%E8%8A%82/">小细节<sup>1</sup></a><a href="/tags/cnblogs/">cnblogs<sup>49</sup></a><a href="/tags/%E6%97%A5%E5%B8%B8%E5%88%B7%E9%A2%98/">日常刷题<sup>1</sup></a><a href="/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E5%80%8D%E6%95%B0%EF%BC%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E7%BA%A6%E6%95%B0/">最大公倍数，最小公约数<sup>1</sup></a><a href="/tags/MySQL/">MySQL<sup>1</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<sup>1</sup></a><a href="/tags/SQL/">SQL<sup>1</sup></a><a href="/tags/LeetCode/">LeetCode<sup>1</sup></a><a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划<sup>1</sup></a><a href="/tags/javaweb/">javaweb<sup>1</sup></a><a href="/tags/SpringBoot/">SpringBoot<sup>1</sup></a><a href="/tags/Java/">Java<sup>1</sup></a><a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">项目实战<sup>1</sup></a><a href="/tags/%E5%B0%8F%E8%AE%B0%E4%B8%80%E5%88%99/">小记一则<sup>1</sup></a><a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序<sup>2</sup></a><a href="/tags/dp/">dp<sup>1</sup></a><a href="/tags/%E8%B4%AA%E5%BF%83/">贪心<sup>1</sup></a><a href="/tags/%E5%AE%9E%E5%86%B5/">实况<sup>2</sup></a><a href="/tags/%E6%9E%84%E9%80%A0/">构造<sup>1</sup></a><a href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">最小生成树<sup>1</sup></a><a href="/tags/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/">费马小定理<sup>1</sup></a><a href="/tags/%E7%AB%9E%E8%B5%9B%E5%AE%9E%E5%86%B5/">竞赛实况<sup>1</sup></a><a href="/tags/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/">任务管理<sup>1</sup></a><a href="/tags/%E6%95%88%E7%8E%87/">效率<sup>1</sup></a><a href="/tags/%E5%BC%82%E6%88%96/">异或<sup>1</sup></a><a href="/tags/%E9%93%BE%E8%A1%A8/">链表<sup>1</sup></a></div></div><div class="console-card history" data-solitude-action="hideConsole"><ul class="card-archive-list"><li class="item"><a href="/archives/2026/07/"><span class="date">2026/07</span><div class="count-group"><span class="count">3</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/06/"><span class="date">2026/06</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/05/"><span class="date">2026/05</span><div class="count-group"><span class="count">13</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/04/"><span class="date">2026/04</span><div class="count-group"><span class="count">20</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/03/"><span class="date">2026/03</span><div class="count-group"><span class="count">29</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/02/"><span class="date">2026/02</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/01/"><span class="date">2026/01</span><div class="count-group"><span class="count">7</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/"><span class="date">全部文章</span><div class="count-group"><span class="count">76</span><span class="unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" data-solitude-action="toggleTheme" title="昼夜切换" heotip="昼夜切换"><i class="solitude fas fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" data-solitude-action="switchHideAside" title="侧边栏显示" heotip="侧边栏显示"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div></div></div><div class="console-mask" data-solitude-action="hideConsole"></div></div><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">76</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" data-solitude-action="toggleTheme"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/" title="首页" heotip="首页"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" title="文章" heotip="文章"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/" title="归档" heotip="归档"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/" title="分类" heotip="分类"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/" title="标签" heotip="标签"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/" title="选手卡" heotip="选手卡"><span>选手卡</span></a></div><div class="menus_item"><a class="site-page" href="/movies/" title="影音室" heotip="影音室"><span>影音室</span></a></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/">博弈论<sup>1</sup></a><a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">滑动窗口<sup>2</sup></a><a href="/tags/%E5%B0%8F%E7%BB%86%E8%8A%82/">小细节<sup>1</sup></a><a href="/tags/cnblogs/">cnblogs<sup>49</sup></a><a href="/tags/%E6%97%A5%E5%B8%B8%E5%88%B7%E9%A2%98/">日常刷题<sup>1</sup></a><a href="/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E5%80%8D%E6%95%B0%EF%BC%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E7%BA%A6%E6%95%B0/">最大公倍数，最小公约数<sup>1</sup></a><a href="/tags/MySQL/">MySQL<sup>1</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<sup>1</sup></a><a href="/tags/SQL/">SQL<sup>1</sup></a><a href="/tags/LeetCode/">LeetCode<sup>1</sup></a><a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划<sup>1</sup></a><a href="/tags/javaweb/">javaweb<sup>1</sup></a><a href="/tags/SpringBoot/">SpringBoot<sup>1</sup></a><a href="/tags/Java/">Java<sup>1</sup></a><a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">项目实战<sup>1</sup></a><a href="/tags/%E5%B0%8F%E8%AE%B0%E4%B8%80%E5%88%99/">小记一则<sup>1</sup></a><a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序<sup>2</sup></a><a href="/tags/dp/">dp<sup>1</sup></a><a href="/tags/%E8%B4%AA%E5%BF%83/">贪心<sup>1</sup></a><a href="/tags/%E5%AE%9E%E5%86%B5/">实况<sup>2</sup></a><a href="/tags/%E6%9E%84%E9%80%A0/">构造<sup>1</sup></a><a href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">最小生成树<sup>1</sup></a><a href="/tags/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/">费马小定理<sup>1</sup></a><a href="/tags/%E7%AB%9E%E8%B5%9B%E5%AE%9E%E5%86%B5/">竞赛实况<sup>1</sup></a><a href="/tags/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/">任务管理<sup>1</sup></a><a href="/tags/%E6%95%88%E7%8E%87/">效率<sup>1</sup></a><a href="/tags/%E5%BC%82%E6%88%96/">异或<sup>1</sup></a><a href="/tags/%E9%93%BE%E8%A1%A8/">链表<sup>1</sup></a></div></div><span class="sidebar-menu-item-title">网站信息</span><div class="webinfo"><div class="webinfo-item"><div class="item-name">全站字数：</div><div class="item-count">46.8k</div></div></div></div></div><div><div class="needEndHide" id="rightside"><div class="rs_hide"></div><div class="rs_show"><button class="mobile toc" type="button" title="目录" heotip="目录" data-solitude-action="toggleTargetClass" data-solitude-target="#card-toc" data-solitude-class="open"><i class="fas fa-list"></i></button><button class="top" type="button" title="返回顶部" heotip="返回顶部" data-solitude-action="toTop"><i class="fas fa-arrow-up"></i><span id="percent">0</span></button></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav" data-solitude-action="onNavBlankClickCloseConsole" data-solitude-event="true"><div id="nav-group"><div id="blog_name"><a href="/" title="返回博客主页" id="site-name" heotip="返回博客主页"><span class="title">FMAN720 / ALGO LOG</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" data-solitude-action="toTop" title="返回顶部" heotip="返回顶部">任务管理器详细使用说明</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/" title="首页" heotip="首页"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" title="文章" heotip="文章"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/" title="归档" heotip="归档"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/" title="分类" heotip="分类"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/" title="标签" heotip="标签"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/" title="选手卡" heotip="选手卡"><span>选手卡</span></a></div><div class="menus_item"><a class="site-page" href="/movies/" title="影音室" heotip="影音室"><span>影音室</span></a></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" data-solitude-action="randomPost" data-solitude-prevent="true" title="随机一篇文章" heotip="随机一篇文章" href="javascript:void(0);"><i class="solitude fas fa-dice-d6"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索" heotip="搜索"><i class="solitude fas fa-magnifying-glass"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="本文采用 原创 许可协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/">效率工具</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>任务管理</span></a><a class="post-meta__tags" href="/tags/%E6%95%88%E7%8E%87/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>效率</span></a></div></div></div></div><h1 class="post-title">任务管理器详细使用说明</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-wordcount"><i class="post-meta-icon solitude fas fa-file-word" title="文章字数"></i><span class="word-count">129</span></span><span class="post-meta-date" title="发布于 2026-07-13 17:32:17"><i class="post-meta-icon solitude fas fa-calendar-days"></i><time datetime="2026-07-13T09:32:17.000Z">2026-07-13T09:32:17.000Z</time></span><span class="post-meta-date" title="最后更新于 2026-08-17 13:06:19"><i class="post-meta-icon solitude fas fa-arrows-rotate"></i><time datetime="2026-08-17T05:06:19.420Z">2026-08-17T05:06:19.420Z</time></span><span class="post-meta-readtime"><i class="post-meta-icon solitude fas fa-clock" title="阅读时长"></i><span>1 分钟</span></span></div></div></div><div class="post-radius-bottom"></div><article class="post-content article-container"><h1 id="任务管理器说明"><a href="#任务管理器说明" class="headerlink" title="任务管理器说明"></a>任务管理器说明</h1><h2 id="添加任务"><a href="#添加任务" class="headerlink" title="添加任务"></a>添加任务</h2><p><strong><em>点击进入任务管理器之后，在“What needs doing”处写入你要的任务，建议以如下格式写</em></strong></p>
 <blockquote>
 <p>7-12 今天我要超过爱因斯坦<br><strong><em>在添加任务的左侧有一个“每日按钮”，点击这个每日按钮之后，就可以在右边 每日任务栏看到你添加的这个任务，只要添加到这个每日任务栏，这个任务就代表是你每天都要做的任务</em></strong></p>
 </blockquote>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://FMAN720.github.io">FMAN720</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://fman720.github.io/2026/07/13/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">https://fman720.github.io/2026/07/13/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://FMAN720.github.io" target="_blank">FMAN720 / ALGO LOG</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/">任务管理</a><a class="post-meta__tags" href="/tags/%E6%95%88%E7%8E%87/">效率</a></div><div class="post-share"><div class="social-share" data-image="/img/catcoding.webp" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/07/17/springboot%E5%AD%A6%E4%B9%A0--bilibili%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" title="SpringBoot 学习 —— bilibili 项目学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">SpringBoot 学习 —— bilibili 项目学习</div></div><div class="info-2"><div class="info-item-1">注解@RestController它告诉 Spring：这是一个控制器（Controller），里面的方法是用来处理 HTTP 请求的 那么什么是http请求呢？第一步：什么叫 HTTP 请求？当你在浏览器输入： http://localhost:8080/hello 然后按下回车。 实际上浏览器做了一件事情： 向你的 Spring Boot 程序发送了一条消息。 这条消息就叫 HTTP 请求（HTTP Request）。 可以把...</div></div></div></a><a class="pagination-related" href="/2026/06/12/%E5%A4%9C%E9%87%8C%E5%B0%8F%E8%AE%B0/" title="夜里小记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">夜里小记</div></div><div class="info-2"><div class="info-item-1">关于一些未来的事情的思考感觉时代发展的速度实在太快，但是自己学习的速度却很慢，在印象里，好像每天都有过焦虑，主要焦虑的东西就是未来工作的事情，至于为啥这么焦虑，主要原因是感觉自己大一快结束了，也没有学到什么东西，算法竞赛也打的一般般，但是我深刻认识到算法竞赛不是给一般人all in的，所以接下来的日子我也不打算写很多的算法题目了，就保持最简单的训练，然后最好蓝桥杯可以拿个国家奖项我就满足了，然后就要把大量时间堆起来来学习技术了，不...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/catcoding.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">FMAN720</div><div class="author-info-description">算法训练 / 电影札记 / 夜间复盘</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">76</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/FMAN720"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/FMAN720" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/1131027701" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">精准大于力量时机胜过速度</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">任务管理器说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.1.</span> <span class="toc-text">添加任务</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/23/MySql%E5%AD%A6%E4%B9%A0/" title="MySQL 学习">MySQL 学习</a><time datetime="2026-07-23T10:32:11.000Z" title="发表于 2026-07-23 18:32:11">2026-07-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/17/springboot%E5%AD%A6%E4%B9%A0--bilibili%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" title="SpringBoot 学习 —— bilibili 项目学习">SpringBoot 学习 —— bilibili 项目学习</a><time datetime="2026-07-17T06:57:17.000Z" title="发表于 2026-07-17 14:57:17">2026-07-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/13/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="任务管理器详细使用说明">任务管理器详细使用说明</a><time datetime="2026-07-13T09:32:17.000Z" title="发表于 2026-07-13 17:32:17">2026-07-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/12/javaweb%E5%AD%A6%E4%B9%A0--%E6%B5%8B%E8%AF%95/" title="javaweb学习">javaweb学习</a><time datetime="2026-06-12T12:51:37.000Z" title="发表于 2026-06-12 20:51:37">2026-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/12/%E5%A4%9C%E9%87%8C%E5%B0%8F%E8%AE%B0/" title="夜里小记">夜里小记</a><time datetime="2026-06-12T12:51:37.000Z" title="发表于 2026-06-12 20:51:37">2026-06-12</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By FMAN720</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.3</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.3"></script><script src="/js/main.js?v=5.5.3"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.3"></script></div></div></body></html>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><div class="post-copyright__author_img"><img class="post-copyright__author_img_front" src="/img/catcoding.webp"></div><div class="post-copyright__author_name">FMAN720</div><div class="post-copyright__author_desc">算法、工程与长期训练记录</div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" data-solitude-action="hideReward"></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a>许可协议，完整转载请注明来自<a href="/">FMAN720 / ALGO LOG</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>任务管理<span class="tagsPageCount">1</span></span></a><a class="post-meta__tags" href="/tags/%E6%95%88%E7%8E%87/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>效率<span class="tagsPageCount">1</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2026/07/17/springboot%E5%AD%A6%E4%B9%A0--bilibili%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">SpringBoot 学习 —— bilibili 项目学习</div></div></a></div><div class="next-post pull-right"><a href="/2026/06/12/javaweb%E5%AD%A6%E4%B9%A0--%E6%B5%8B%E8%AF%95/"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">javaweb学习</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" data-solitude-action="changeWittyWord"></div></div></div><div class="avatar"><img alt="头像" src="/img/catcoding.webp"></div><div class="description">白天刷题，深夜复盘。慢慢来，但每一次都要真的往前走一点。</div><div class="bottom-group"><span class="left"><div class="name">FMAN720</div><div class="desc">算法训练 / 电影札记 / 夜间复盘</div></span><div class="social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/FMAN720" title="Github" heotip="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/1131027701" title="Bilibili" heotip="Bilibili"><i class="solitude  fab fa-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fas fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%B4%E6%98%8E"><span class="toc-text">任务管理器说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%BB%BB%E5%8A%A1"><span class="toc-text">添加任务</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/2026/07/23/MySql%E5%AD%A6%E4%B9%A0/" title="MySQL 学习"><div class="content"><span class="title" href="/2026/07/23/MySql%E5%AD%A6%E4%B9%A0/" title="MySQL 学习">MySQL 学习</span><span class="categories" href="/2026/07/23/MySql%E5%AD%A6%E4%B9%A0/">后端学习</span></div></a><a class="aside-list-item" href="/2026/07/17/springboot%E5%AD%A6%E4%B9%A0--bilibili%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" title="SpringBoot 学习 —— bilibili 项目学习"><div class="content"><span class="title" href="/2026/07/17/springboot%E5%AD%A6%E4%B9%A0--bilibili%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" title="SpringBoot 学习 —— bilibili 项目学习">SpringBoot 学习 —— bilibili 项目学习</span><span class="categories" href="/2026/07/17/springboot%E5%AD%A6%E4%B9%A0--bilibili%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/">后端学习</span></div></a><a class="aside-list-item" href="/2026/07/13/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="任务管理器详细使用说明"><div class="content"><span class="title" href="/2026/07/13/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="任务管理器详细使用说明">任务管理器详细使用说明</span><span class="categories" href="/2026/07/13/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">效率工具</span></div></a><a class="aside-list-item" href="/2026/06/12/javaweb%E5%AD%A6%E4%B9%A0--%E6%B5%8B%E8%AF%95/" title="javaweb学习"><div class="content"><span class="title" href="/2026/06/12/javaweb%E5%AD%A6%E4%B9%A0--%E6%B5%8B%E8%AF%95/" title="javaweb学习">javaweb学习</span><span class="categories" href="/2026/06/12/javaweb%E5%AD%A6%E4%B9%A0--%E6%B5%8B%E8%AF%95/">javaweb学习</span></div></a><a class="aside-list-item" href="/2026/06/12/%E5%A4%9C%E9%87%8C%E5%B0%8F%E8%AE%B0/" title="夜里小记"><div class="content"><span class="title" href="/2026/06/12/%E5%A4%9C%E9%87%8C%E5%B0%8F%E8%AE%B0/" title="夜里小记">夜里小记</span><span class="categories" href="/2026/06/12/%E5%A4%9C%E9%87%8C%E5%B0%8F%E8%AE%B0/">思考随笔</span></div></a></div></div></div></div></main><footer id="footer"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/FMAN720" title="Github" heotip="Github"><i class="solitude  fab fa-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/1131027701" title="Bilibili" heotip="Bilibili"><i class="solitude  fab fa-bilibili"></i></a><div class="nolazyload footer_mini_logo" id="footer_mini_logo" title="返回顶部" heotip="返回顶部" data-solitude-action="toTop"><img alt="返回顶部"></div></div><div><div id="st-footer"><div class="footer-group"><h3 class="footer-title">导航</h3><div class="footer-links"><a class="footer-item" href="/archives/" title="Archives">Archives</a><a class="footer-item" href="/categories/" title="Categories">Categories</a><a class="footer-item" href="/tags/" title="Tags">Tags</a></div></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2025 - 2026 By<a class="footer-bar-link" href="/" title="FMAN720">FMAN720</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/" title="框架：Hexo" heotip="框架：Hexo">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" title="主题：Solitude" heotip="主题：Solitude">主题：Solitude</a></div></div><div class="footer-bar-right"></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fas fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fas fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fas fa-arrows-rotate"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fas fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext" title="复制选中文字" heotip="复制选中文字"><i class="solitude fas fa-clone"></i><span>复制选中文字</span></div><div class="rightMenu-item" id="menu-pastetext" title="粘贴文字" heotip="粘贴文字"><i class="solitude fas fa-clipboard"></i><span>粘贴文字</span></div><div class="rightMenu-item" id="menu-newwindow" title="在新窗口打开" heotip="在新窗口打开"><i class="solitude far fa-window-maximize"></i><span>在新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink" title="复制链接地址" heotip="复制链接地址"><i class="solitude fas fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg" title="复制此图片" heotip="复制此图片"><i class="solitude fas fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg" title="下载此图片" heotip="下载此图片"><i class="solitude fas fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-search" title="站内搜索" heotip="站内搜索"><i class="solitude fas fa-magnifying-glass"></i><span>站内搜索</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-randomPost" data-solitude-action="runConfiguredAction" data-solitude-value="Solitude.randomPost()" title="随机文章" heotip="随机文章"><i class="solitude fas fa-tower-broadcast"></i><span>随机文章</span></div><div class="rightMenu-item" data-solitude-action="runConfiguredAction" data-solitude-value="pjax.loadUrl('/categories/')" title="全部分类" heotip="全部分类"><i class="solitude fas fa-clone"></i><span>全部分类</span></div><div class="rightMenu-item" data-solitude-action="runConfiguredAction" data-solitude-value="pjax.loadUrl('/tags/')" title="全部标签" heotip="全部标签"><i class="solitude fas fa-tags"></i><span>全部标签</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-darkmode" data-solitude-action="switchDarkMode"><i class="solitude fas fa-circle-half-stroke"></i><span class="menu-darkmode-text" title="深色模式" heotip="深色模式">深色模式</span></div></div></div><div id="rightmenu-mask"></div></div><div><!-- Critical scripts loaded synchronously--><script src= "" data-lazy-src="/js/utils.js?v=4.0.0"></script><!-- Non-critical scripts loaded asynchronously--><script defer src="/js/third_party/waterfall.min.js?v=4.0.0"></script><script src="/pluginsSrc/pjax/pjax.min.js?v=0.2.8"></script><!-- Feature-specific scripts loaded asynchronously--><script defer src="/js/third_party/universe.min.js?v=4.0.0"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  if (typeof dark === 'function') dark();
+});
+</script><!-- UI enhancement scripts--><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js?v=19.1.3"></script><script defer src="/pluginsSrc/node-snackbar/dist/snackbar.min.js?v=0.1.16"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js?v=6.1.14"></script><!-- Music player scripts--><!-- Cover color processing scripts--><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+Solitude.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="/pluginsSrc/pace-js/pace.min.js?v=1.2.4"></script><!-- Search functionality--><!-- Main module dynamically imports enabled first-party features.--><script type="module" src="/js/main.js?v=4.0.0"></script><div class="js-pjax"><script defer pjax src="/pluginsSrc/busuanzi/bsz.pure.mini.js?v=2.3.0"></script></div></div><!-- pjax--><script>function initPjax() {
+    if (typeof Pjax === 'undefined') {
+        setTimeout(initPjax, 100);
+        return;
+    }
+
+    const instance = new Pjax({
+        elements: 'a:not([target="_blank"])',
+        selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+        cacheBust: false,
+        analytics: false,
+        scrollRestoration: false
+    })
+
+    Solitude.pjax = instance;
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    document.addEventListener('pjax:send', () => {
+        document.dispatchEvent(new CustomEvent('solitude:beforeNavigate'))
+        Solitude.disposePage?.()
+        Object.values(window.globalFn?.pjax || {}).forEach(dispose => dispose())
+        if (window.globalFn) window.globalFn.pjax = {}
+    })
+
+    document.addEventListener('pjax:complete', async () => {
+        await Solitude.refresh()
+
+        document.querySelectorAll('script[data-pjax]').forEach(item => {
+            const newScript = document.createElement('script')
+            const content = item.text || item.textContent || item.innerHTML || ""
+            Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+            newScript.appendChild(document.createTextNode(content))
+            item.parentNode.replaceChild(newScript, item)
+        })
+
+        Solitude.config.lazyload.enable && window.lazyLoadInstance?.update()
+        document.dispatchEvent(new CustomEvent('solitude:afterNavigate', {
+            detail: {page: Solitude.page}
+        }))
+
+    })
+
+    document.addEventListener('pjax:error', (e) => {
+        if (e.request.status === 404) {
+            Solitude.navigate('/404.html')
+        }
+    })
+}
+
+// 初始化 Pjax
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPjax);
+} else {
+    initPjax();
+}</script><!-- google adsense--><div id="local-search"><div class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="local-search-title"><nav class="search-nav"><span class="search-dialog-title" id="local-search-title">搜索</span><button class="search-close-button" type="button" aria-label="关闭搜索"><i class="solitude fas fa-xmark"></i></button></nav><div class="search-wrap"><div class="search-box"><input class="search-box-input" id="search-input" type="search" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="输入关键词快速查找" aria-label="输入关键词快速查找"></div><div id="search-suggestions" aria-label="热门搜索"><button class="tag-list" type="button" data-query="算法">算法</button><button class="tag-list" type="button" data-query="C++">C++</button><button class="tag-list" type="button" data-query="Java">Java</button><button class="tag-list" type="button" data-query="电影">电影</button></div><ul id="search-results" hidden></ul><div id="search-pagination"></div><div id="search-tips"></div></div></div><div id="search-mask"></div></div></body></html>
