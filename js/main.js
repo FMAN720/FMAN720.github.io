@@ -539,7 +539,10 @@ const actions = {
   randomPost() {
     const posts = Solitude.config.random_posts || [];
     if (!posts.length) return;
-    Solitude.navigate(`${Solitude.config.root}${posts[Solitude.randomNum(posts.length)]}`);
+    const post = posts[Solitude.randomNum(posts.length)];
+    const base = new URL(Solitude.config.root || "/", window.location.origin);
+    const target = new URL(post, base);
+    Solitude.navigate(`${target.pathname}${target.search}${target.hash}`);
   },
   noop() {},
   navigateTo(url) {
