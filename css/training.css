@@ -1,0 +1,330 @@
+/*
+ * FMAN720 / ALGO LOG — training widgets
+ * Stats strip + heatmap (archives / about) and the late-night chip.
+ * Built on the terminal-documentation skin in custom.css:
+ * square corners, hairline borders, mono type, #c8d354 accent.
+ */
+
+.training-panel {
+  padding: 22px;
+  background: transparent;
+  border-bottom: var(--style-border);
+}
+
+.training-panel__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+  margin-bottom: 18px;
+}
+
+.training-panel__eyebrow,
+.training-heatmap__eyebrow {
+  color: var(--efu-main, #c8d354);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.training-panel__title {
+  color: var(--efu-fontcolor, #f2eee7);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.training-panel__range {
+  color: var(--efu-secondtext, #a8a39a);
+  font-size: 11.5px;
+}
+
+/* ---------------- stats strip ---------------- */
+
+.training-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 20px;
+  border: 1px solid #2c2926;
+  background: #141311;
+}
+
+.training-stats__cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 16px 12px;
+  border-left: 1px solid #2c2926;
+}
+
+.training-stats__cell:first-child {
+  border-left: 0;
+}
+
+.training-stats__en {
+  color: var(--efu-secondtext, #a8a39a);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.training-stats__value {
+  color: var(--efu-fontcolor, #f2eee7);
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.training-stats__cn {
+  color: var(--efu-secondtext, #a8a39a);
+  font-size: 11px;
+}
+
+.training-stats__chips {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid #2c2926;
+}
+
+.training-stats__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 10px;
+  color: var(--efu-secondtext, #a8a39a);
+  font-size: 12px;
+  border: 1px solid #39352f;
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+
+.training-stats__chip:hover {
+  color: var(--efu-main, #c8d354);
+  border-color: rgba(200, 211, 84, 0.45);
+}
+
+.training-stats__chip-count {
+  color: var(--efu-fontcolor, #f2eee7);
+  font-weight: 700;
+}
+
+/* ---------------- heatmap ---------------- */
+
+.training-heatmap {
+  --th-cell: 12px;
+  --th-gap: 2px;
+  --th-pitch: calc(var(--th-cell) + var(--th-gap));
+}
+
+.training-heatmap__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  margin-bottom: 10px;
+}
+
+.training-heatmap__meta {
+  color: var(--efu-secondtext, #a8a39a);
+  font-size: 11px;
+}
+
+.training-heatmap__months {
+  position: relative;
+  height: 15px;
+  margin-bottom: 4px;
+  font-size: 10px;
+  color: var(--efu-secondtext, #a8a39a);
+}
+
+.training-heatmap__month {
+  position: absolute;
+  top: 0;
+  left: calc(var(--th-pitch) * var(--th-col, 0));
+  white-space: nowrap;
+}
+
+.training-heatmap__gridwrap {
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.training-heatmap__grid {
+  display: grid;
+  grid-template-rows: repeat(7, var(--th-cell));
+  grid-auto-flow: column;
+  grid-auto-columns: var(--th-cell);
+  gap: var(--th-gap);
+  width: max-content;
+}
+
+.training-heatmap__cell {
+  width: var(--th-cell);
+  height: var(--th-cell);
+  background: #1d1b18;
+}
+
+.training-heatmap__cell--empty {
+  background: transparent;
+}
+
+.training-heatmap__cell--lv0 {
+  background: #1d1b18;
+}
+
+.training-heatmap__cell--lv1 {
+  background: rgba(200, 211, 84, 0.26);
+}
+
+.training-heatmap__cell--lv2 {
+  background: rgba(200, 211, 84, 0.48);
+}
+
+.training-heatmap__cell--lv3 {
+  background: rgba(200, 211, 84, 0.72);
+}
+
+.training-heatmap__cell--lv4 {
+  background: #c8d354;
+}
+
+.training-heatmap__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 16px;
+  margin-top: 8px;
+}
+
+.training-heatmap__legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  color: var(--efu-secondtext, #a8a39a);
+}
+
+.training-heatmap__legend-cell {
+  width: 9px;
+  height: 9px;
+}
+
+.training-heatmap__caption {
+  color: var(--efu-secondtext, #a8a39a);
+  font-size: 11px;
+  transition: color 0.18s ease;
+}
+
+/* About-page variant lives inside a dossier section; drop the box. */
+
+.training-panel--dossier {
+  margin-top: 6px;
+  padding: 0;
+  border-bottom: 0;
+}
+
+/* ---------------- post signature ---------------- */
+
+.training-sign {
+  margin-top: 36px;
+  padding-top: 14px;
+  border-top: 1px dashed #2c2926;
+}
+
+.training-sign__mark {
+  color: var(--efu-main, #c8d354);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.training-sign__body {
+  color: var(--efu-secondtext, #a8a39a);
+  font-size: 12px;
+}
+
+/* ---------------- late-night chip ---------------- */
+
+.training-night-chip {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(92vw, 460px);
+  padding: 9px 12px;
+  color: var(--efu-fontcolor, #f2eee7);
+  font-size: 12px;
+  background: var(--efu-maskbgdeep, rgba(16, 15, 14, 0.98));
+  border: 1px solid #39352f;
+  border-left: 2px solid var(--efu-main, #c8d354);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.18s ease;
+}
+
+.training-night-chip.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.training-night-chip__cursor {
+  color: var(--efu-main, #c8d354);
+  font-weight: 700;
+}
+
+.training-night-chip__msg {
+  flex: 1;
+  min-width: 0;
+}
+
+.training-night-chip__time {
+  color: var(--efu-secondtext, #a8a39a);
+}
+
+.training-night-chip__close {
+  padding: 0 2px;
+  color: var(--efu-secondtext, #a8a39a);
+  font-size: 14px;
+  line-height: 1;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.training-night-chip__close:hover {
+  color: var(--efu-fontcolor, #f2eee7);
+}
+
+/* ---------------- small screens ---------------- */
+
+@media (max-width: 680px) {
+  .training-panel {
+    padding: 16px;
+  }
+
+  .training-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .training-stats__cell:nth-child(3) {
+    border-left: 0;
+  }
+
+  .training-stats__cell:nth-child(n + 3) {
+    border-top: 1px solid #2c2926;
+  }
+
+  .training-heatmap {
+    --th-cell: 10px;
+  }
+
+  .training-night-chip {
+    right: 12px;
+    bottom: 12px;
+  }
+}
